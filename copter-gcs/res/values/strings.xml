@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Setup!</string>
+    <string name="app_name">Copter GCS</string>
+    
+     <!--  DeviceListActivity -->
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+    <string name="local_service_started">Local service has started</string>
+    <string name="local_service_label">Quad+ GCS Link</string>
+
+     <string-array name="mode_array">
+        <item>STABILIZE</item>      
+        <item>ACRO</item>
+        <item>SIMPLE</item>
+        <item>ALT_HOLD</item>
+        <item>AUTO</item>
+        <item>GUIDED</item>
+        <item>LOITER</item>
+        <item>RTL</item>
+        <item>CIRCLE</item>
+    </string-array>
+    
+    <string-array name="battery_modes">
+        <item>Disabled</item>      
+        <item>3 Cell</item>
+        <item>4 Cell</item>
+        <item>Battery Volts</item>
+        <item>Volts and Current</item>        
+    </string-array>
+    
+</resources>

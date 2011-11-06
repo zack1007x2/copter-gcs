@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Debug 0M0SoHd3KltZrZ9eKf1Ay3_ZKoTC8g2Eikxx56A -->
+<!-- Release 0IUZ_TotgUSaDRC5Bcf1c7wjVF-Pdk6i0DvOu3Q -->
+<RelativeLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+					android:layout_width="match_parent" android:layout_height="match_parent">
+<com.google.android.maps.MapView
+    android:id="@+id/mapview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:apiKey="0M0SoHd3KltZrZ9eKf1Ay3_ZKoTC8g2Eikxx56A"
+/>
+
+<ImageView android:id="@+id/drag" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" 
+			android:src="@drawable/small_pin" 
+			android:visibility="gone"/>
+</RelativeLayout>
+

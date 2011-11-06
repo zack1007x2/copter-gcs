@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menuLoadMission" 
+    	  android:title="Retrieve Mission"></item>
+    <item android:id="@+id/menuSaveMission"
+    	  android:title="Save"></item>
+    <item android:id="@+id/menuEditMission" 
+    	  android:title="Edit"></item>
+ 	<item android:id="@+id/menuClearMission" 
+    	  android:title="Clear"></item>
+ 	<item android:id="@+id/menuEnableEdit" 
+    	  android:title="Toggle Moveable"></item>
+</menu>
