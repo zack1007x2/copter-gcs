@@ -10,11 +10,11 @@ public class msg_local_position_setpoint_set extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_LOCAL_POSITION_SETPOINT_SET;
 
-	public 	int target_system; ///< System ID
-	public 	int target_component; ///< Component ID
-	public 	float x; ///< x position
-	public 	float y; ///< y position
-	public 	float z; ///< z position
-	public 	float yaw; ///< Desired yaw angle
+	public int target_system; ///< System ID
+	public int target_component; ///< Component ID
+	public float x; ///< x position
+	public float y; ///< y position
+	public float z; ///< z position
+	public float yaw; ///< Desired yaw angle
 
 }

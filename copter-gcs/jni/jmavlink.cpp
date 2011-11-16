@@ -1,9 +1,11 @@
-#include <mavlink_types.h>
-
-#include <common.h>
+#include "include/ardupilotmega/version.h"
+#include "include/mavlink_types.h"
+#include "include/ardupilotmega/mavlink.h"
 
 #include <string.h>
 #include <jni.h>
+
+//#include <android/log.h>
 
 // Declare each of the known java classes
 #include "classDeclarations.h"
@@ -47,10 +49,14 @@ JNIEXPORT jobject JNICALL Java_com_MAVLink_MAVLink_receivedByte(JNIEnv * env, jc
     if( decodeState == 1){
 
     	jobject result;
+		//__android_log_print(ANDROID_LOG_DEBUG, "TEST", "Received Msg: %d", message.msgid );
 
     	switch(message.msgid){
     		// Switch to the correct receive unpack function (defined in parseFunctions.h)
 			#include "switchReceive.h"
+
+    	default:
+    		result = NULL;
 
     	}
 

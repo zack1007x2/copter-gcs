@@ -10,8 +10,8 @@ public class msg_action extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_ACTION;
 
-	public 	int target; ///< The system executing the action
-	public 	int target_component; ///< The component executing the action
-	public 	int action; ///< The action id
+	public int target; ///< The system executing the action
+	public int target_component; ///< The component executing the action
+	public int action; ///< The action id
 
 }

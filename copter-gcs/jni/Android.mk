@@ -14,12 +14,11 @@
 #
 LOCAL_PATH := $(call my-dir)
 
-
-
 include $(CLEAR_VARS)
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/mavlink/include/common
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/mavlink/include
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/mavlink/
 
+#LOCAL_LDLIBS := -llog  
 LOCAL_MODULE    := jmavlink
 LOCAL_SRC_FILES := jmavlink.cpp
 

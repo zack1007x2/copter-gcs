@@ -313,6 +313,16 @@
 
 		parsed=true;
 		break;
+	case MAVLINK_MSG_ID_OPTICAL_FLOW:
+		pack_msg_optical_flow(env, optical_flow_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_OBJECT_DETECTION_EVENT:
+		pack_msg_object_detection_event(env, object_detection_event_class, obj, msg); 
+
+		parsed=true;
+		break;
 	case MAVLINK_MSG_ID_DEBUG_VECT:
 		pack_msg_debug_vect(env, debug_vect_class, obj, msg); 
 
@@ -335,6 +345,51 @@
 		break;
 	case MAVLINK_MSG_ID_DEBUG:
 		pack_msg_debug(env, debug_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_SENSOR_OFFSETS:
+		pack_msg_sensor_offsets(env, sensor_offsets_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_SET_MAG_OFFSETS:
+		pack_msg_set_mag_offsets(env, set_mag_offsets_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_MEMINFO:
+		pack_msg_meminfo(env, meminfo_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_AP_ADC:
+		pack_msg_ap_adc(env, ap_adc_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_DIGICAM_CONFIGURE:
+		pack_msg_digicam_configure(env, digicam_configure_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_DIGICAM_CONTROL:
+		pack_msg_digicam_control(env, digicam_control_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_MOUNT_CONFIGURE:
+		pack_msg_mount_configure(env, mount_configure_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_MOUNT_CONTROL:
+		pack_msg_mount_control(env, mount_control_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_MOUNT_STATUS:
+		pack_msg_mount_status(env, mount_status_class, obj, msg); 
 
 		parsed=true;
 		break;

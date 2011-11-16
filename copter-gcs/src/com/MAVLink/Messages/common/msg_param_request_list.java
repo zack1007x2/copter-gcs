@@ -10,7 +10,7 @@ public class msg_param_request_list extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_PARAM_REQUEST_LIST;
 
-	public 	int target_system; ///< System ID
-	public 	int target_component; ///< Component ID
+	public int target_system; ///< System ID
+	public int target_component; ///< Component ID
 
 }

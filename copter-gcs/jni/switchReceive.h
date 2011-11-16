@@ -250,6 +250,14 @@
 		result = unpack_msg_command_ack(env, message);	
 		break;
 
+	case MAVLINK_MSG_ID_OPTICAL_FLOW:
+		result = unpack_msg_optical_flow(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_OBJECT_DETECTION_EVENT:
+		result = unpack_msg_object_detection_event(env, message);	
+		break;
+
 	case MAVLINK_MSG_ID_DEBUG_VECT:
 		result = unpack_msg_debug_vect(env, message);	
 		break;
@@ -268,5 +276,41 @@
 
 	case MAVLINK_MSG_ID_DEBUG:
 		result = unpack_msg_debug(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_SENSOR_OFFSETS:
+		result = unpack_msg_sensor_offsets(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_SET_MAG_OFFSETS:
+		result = unpack_msg_set_mag_offsets(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_MEMINFO:
+		result = unpack_msg_meminfo(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_AP_ADC:
+		result = unpack_msg_ap_adc(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_DIGICAM_CONFIGURE:
+		result = unpack_msg_digicam_configure(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_DIGICAM_CONTROL:
+		result = unpack_msg_digicam_control(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_MOUNT_CONFIGURE:
+		result = unpack_msg_mount_configure(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_MOUNT_CONTROL:
+		result = unpack_msg_mount_control(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_MOUNT_STATUS:
+		result = unpack_msg_mount_status(env, message);	
 		break;
 

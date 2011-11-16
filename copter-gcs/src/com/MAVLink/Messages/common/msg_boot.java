@@ -10,6 +10,6 @@ public class msg_boot extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_BOOT;
 
-	public 	long version; ///< The onboard software version
+	public long version; ///< The onboard software version
 
 }

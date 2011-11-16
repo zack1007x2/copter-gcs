@@ -186,7 +186,8 @@ public class StatusActivity extends Activity implements OnLongClickListener{
 		
 		
 		private String getAC2Mode(int mode) {
-			String modes[] = new String[]{"STABILIZE", "ACRO", "SIMPLE", "ALT_HOLD", "AUTO", "GUIDED", "LOITER", "RTL", "CIRCLE"};
+			String modes[] = new String[]{"STABILIZE", "ACRO", "ALT_HOLD", "AUTO", "GUIDED", "LOITER", "RTL", "CIRCLE", "POSITION"};
+	        //String modes[] = new String[]{"STABILIZE", "ACRO", "SIMPLE", "ALT_HOLD", "AUTO", "GUIDED", "LOITER", "RTL", "CIRCLE"};
 			if( mode-100 < modes.length)
 				return modes[mode-100];
 	

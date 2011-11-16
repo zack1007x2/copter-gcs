@@ -10,9 +10,9 @@ public class msg_position_target extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_POSITION_TARGET;
 
-	public 	float x; ///< x position
-	public 	float y; ///< y position
-	public 	float z; ///< z position
-	public 	float yaw; ///< yaw orientation in radians, 0 = NORTH
+	public float x; ///< x position
+	public float y; ///< y position
+	public float z; ///< z position
+	public float yaw; ///< yaw orientation in radians, 0 = NORTH
 
 }

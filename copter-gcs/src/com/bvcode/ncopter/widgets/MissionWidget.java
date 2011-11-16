@@ -1,7 +1,5 @@
 package com.bvcode.ncopter.widgets;
 
-import java.lang.reflect.Field;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -12,9 +10,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TableLayout;
-
+ 
 import com.MAVLink.MAVLink;
-import com.MAVLink.MAVLink.MAV_CMD;
 import com.MAVLink.MAVLink.MAV_FRAME;
 import com.MAVLink.Messages.IMAVLinkMessage;
 import com.MAVLink.Messages.common.msg_waypoint;
@@ -56,28 +53,30 @@ public class MissionWidget extends TableLayout {
 		commandAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item);
 		commandAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		commandAdapter.add("NONE");
-		Field[] field = MAV_CMD.class.getFields();
-		for (Field f : field) {
-			commandAdapter.add(f.getName());
-
-		}
+		//TODO fix mavCmd
+		//Field[] field = MAV_CMD.class.getFields();
+		//for (Field f : field) {
+		//	commandAdapter.add(f.getName());
+		//}
+		
 		command.setAdapter(commandAdapter);
 		command.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 		    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-		    	String s = (String) parent.getItemAtPosition(pos);
+		    	//String s = (String) parent.getItemAtPosition(pos);
 		    	
-				try {
-					msg.command = MAV_CMD.class.getField(s).getInt(null);
+				//try {
+					//TODO MAV_CMD from xml file...
+					msg.command = 16; //MAV_CMD.class.getField(s).getInt(null);
 
-				} catch (IllegalArgumentException e) {
-					e.printStackTrace();
-				} catch (SecurityException e) {
-					e.printStackTrace();
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-				} catch (NoSuchFieldException e) {
-					e.printStackTrace();
-				}
+//				} catch (IllegalArgumentException e) {
+//					e.printStackTrace();
+//				} catch (SecurityException e) {
+//					e.printStackTrace();
+//				} catch (IllegalAccessException e) {
+//					e.printStackTrace();
+//				} catch (NoSuchFieldException e) {
+//					e.printStackTrace();
+//				}
 		    }
 		    public void onNothingSelected(AdapterView<?> parent) {
 		    }
@@ -87,11 +86,12 @@ public class MissionWidget extends TableLayout {
 		frameAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item);
 		frameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		frameAdapter.add("NONE");
-		field = MAV_FRAME.class.getFields();
-	    for (Field f : field) {
-			frameAdapter.add(f.getName());
-
-		}		
+		//TODO Fix mav cmd
+//		field = MAV_FRAME.class.getFields();
+//	    for (Field f : field) {
+//			frameAdapter.add(f.getName());
+//
+//		}		
 		frame.setAdapter(frameAdapter);
 		frame.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 		    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -140,7 +140,7 @@ public class MissionWidget extends TableLayout {
 		param4.setText( msg.param4 + " ");
 		
 		posX.setText( msg.x + " ");
-		posY.setText( msg.y + " ");
+		posY.setText( msg.y + " "); 
 		posZ.setText( msg.z + " ");
 		
 		//TODO need to select the proper option in the menu

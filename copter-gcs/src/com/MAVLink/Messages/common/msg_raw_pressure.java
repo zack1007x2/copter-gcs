@@ -10,10 +10,10 @@ public class msg_raw_pressure extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_RAW_PRESSURE;
 
-	public 	long usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
-	public 	int press_abs; ///< Absolute pressure (raw)
-	public 	int press_diff1; ///< Differential pressure 1 (raw)
-	public 	int press_diff2; ///< Differential pressure 2 (raw)
-	public 	int temperature; ///< Raw Temperature measurement (raw)
+	public long usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+	public int press_abs; ///< Absolute pressure (raw)
+	public int press_diff1; ///< Differential pressure 1 (raw)
+	public int press_diff2; ///< Differential pressure 2 (raw)
+	public int temperature; ///< Raw Temperature measurement (raw)
 
 }

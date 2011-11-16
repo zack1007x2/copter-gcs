@@ -10,7 +10,7 @@ public class msg_waypoint_clear_all extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_WAYPOINT_CLEAR_ALL;
 
-	public 	int target_system; ///< System ID
-	public 	int target_component; ///< Component ID
+	public int target_system; ///< System ID
+	public int target_component; ///< Component ID
 
 }

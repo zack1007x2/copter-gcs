@@ -234,6 +234,7 @@ public class CommunicationService extends Service {
 									}
 				    			}else if (CommonSettings.isProtocolMAVLink()){
 				    				// Use the MAVLink protocol
+				    				//Log.d("Receiving", "-");
 				    				IMAVLinkMessage msg = MAVLink.receivedByte(b[0]);
 				    				read = 0; //just use the first element in the buffer, AC1 legacy
 				    				
@@ -242,7 +243,8 @@ public class CommunicationService extends Service {
 				    						mHandler.removeCallbacks(r);
 				    					    mHandler.postDelayed(r, 5000);
 				    							
-				    					}	
+				    					}
+				    					Log.d("received:", "" + msg.messageType);
 				    					notifyNewMessage(cmdRecvCount, msg);
 				    				}
 					    						

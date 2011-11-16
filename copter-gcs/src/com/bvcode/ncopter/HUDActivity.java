@@ -135,16 +135,24 @@ public class HUDActivity extends Activity{
 						hud.setAltitude(msg.alt);
 
 						String s;
+						
 						switch(msg.fix_type){
-							case 2:
-								s="2D";
-								break;
-							case 3:
-								s="3D";
-								break;
-							
-							default:
-								s="No";
+							case 0:
+							case 1:
+	                            s="No Fix";
+	                            break;
+	                            
+	                        case 2:
+	                        	s="2D Fix";
+	                            break;
+
+	                        case 3:
+	                        	s="3D Fix";
+	                            break;
+	                        
+	                        default:
+	                            s="No GPS";
+	                            
 						}
 
 						hud.setGPSFix(s);

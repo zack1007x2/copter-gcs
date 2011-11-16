@@ -10,12 +10,12 @@ public class msg_attitude extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_ATTITUDE;
 
-	public 	long usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
-	public 	float roll; ///< Roll angle (rad)
-	public 	float pitch; ///< Pitch angle (rad)
-	public 	float yaw; ///< Yaw angle (rad)
-	public 	float rollspeed; ///< Roll angular speed (rad/s)
-	public 	float pitchspeed; ///< Pitch angular speed (rad/s)
-	public 	float yawspeed; ///< Yaw angular speed (rad/s)
+	public long usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+	public float roll; ///< Roll angle (rad)
+	public float pitch; ///< Pitch angle (rad)
+	public float yaw; ///< Yaw angle (rad)
+	public float rollspeed; ///< Roll angular speed (rad/s)
+	public float pitchspeed; ///< Pitch angular speed (rad/s)
+	public float yawspeed; ///< Yaw angular speed (rad/s)
 
 }

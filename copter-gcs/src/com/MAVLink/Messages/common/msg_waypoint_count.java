@@ -10,8 +10,8 @@ public class msg_waypoint_count extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_WAYPOINT_COUNT;
 
-	public 	int target_system; ///< System ID
-	public 	int target_component; ///< Component ID
-	public 	int count; ///< Number of Waypoints in the Sequence
+	public int target_system; ///< System ID
+	public int target_component; ///< Component ID
+	public int count; ///< Number of Waypoints in the Sequence
 
 }

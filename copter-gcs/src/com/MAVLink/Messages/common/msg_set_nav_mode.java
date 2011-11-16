@@ -10,7 +10,7 @@ public class msg_set_nav_mode extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_SET_NAV_MODE;
 
-	public 	int target; ///< The system setting the mode
-	public 	int nav_mode; ///< The new navigation mode
+	public int target; ///< The system setting the mode
+	public int nav_mode; ///< The new navigation mode
 
 }

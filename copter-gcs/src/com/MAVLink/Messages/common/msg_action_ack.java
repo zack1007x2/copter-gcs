@@ -10,7 +10,7 @@ public class msg_action_ack extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_ACTION_ACK;
 
-	public 	int action; ///< The action id
-	public 	int result; ///< 0: Action DENIED, 1: Action executed
+	public int action; ///< The action id
+	public int result; ///< 0: Action DENIED, 1: Action executed
 
 }

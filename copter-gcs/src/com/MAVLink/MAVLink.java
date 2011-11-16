@@ -64,39 +64,6 @@ public class MAVLink {
             init();
 
     }
-	public class MAV_CMD{
-		public final static int MAV_CMD_NAV_WAYPOINT=16; //, * Navigate to waypoint. | Hold time in decimal seconds. (ignored by fixed wing, time to stay at waypoint for rotary wing) | Acceptance radius in meters (if the sphere with this radius is hit, the waypoint counts as reached) | 0 to pass through the WP, if > 0 radius in meters to pass by WP. Positive value for clockwise orbit, negative value for counter-clockwise orbit. Allows trajectory control. | Desired yaw angle at waypoint (rotary wing) | Latitude | Longitude | Altitude | *
-		public final static int MAV_CMD_NAV_LOITER_UNLIM=17; //, * Loiter around this waypoint an unlimited amount of time | Empty | Empty | Radius around waypoint, in meters. If positive loiter clockwise, else counter-clockwise | Desired yaw angle. | Latitude | Longitude | Altitude | *
-		public final static int MAV_CMD_NAV_LOITER_TURNS=18; //, * Loiter around this waypoint for X turns | Turns | Empty | Radius around waypoint, in meters. If positive loiter clockwise, else counter-clockwise | Desired yaw angle. | Latitude | Longitude | Altitude | *
-		public final static int MAV_CMD_NAV_LOITER_TIME=19; //, * Loiter around this waypoint for X seconds | Seconds (decimal) | Empty | Radius around waypoint, in meters. If positive loiter clockwise, else counter-clockwise | Desired yaw angle. | Latitude | Longitude | Altitude | *
-		public final static int MAV_CMD_NAV_RETURN_TO_LAUNCH=20; //, * Return to launch location | Empty | Empty | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_NAV_LAND=21; //, * Land at location | Empty | Empty | Empty | Desired yaw angle. | Latitude | Longitude | Altitude | *
-		public final static int MAV_CMD_NAV_TAKEOFF=22; //, * Takeoff from ground 
-		public final static int MAV_CMD_NAV_ROI=80; //, * Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras. | Region of intereset mode. (see MAV_ROI enum) | Waypoint index
-		public final static int MAV_CMD_NAV_PATHPLANNING=81; //, * Control autonomous path planning on the MAV. | 0: Disable local obstacle avoidance 
-		public final static int MAV_CMD_NAV_LAST=95; //, * NOP - This command is only used to mark the upper limit of the NAV
-		public final static int MAV_CMD_CONDITION_DELAY=112; //, * Delay mission state machine. | Delay in seconds (decimal) | Empty | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_CONDITION_CHANGE_ALT=113; //, * Ascend
-		public final static int MAV_CMD_CONDITION_DISTANCE=114; //, * Delay mission state machine until within desired distance of next NAV point. | Distance (meters) | Empty | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_CONDITION_YAW=115; //, * Reach a certain target angle. | target angle: [0-360], 0 is north | speed during yaw change:[deg per second] | direction: negative: counter clockwise, positive: clockwise [-1,1] | relative offset or absolute angle: [ 1,0] | Empty | Empty | Empty | *
-		public final static int MAV_CMD_CONDITION_LAST=159; //, * NOP - This command is only used to mark the upper limit of the CONDITION commands in the enumeration | Empty | Empty | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_SET_MODE=176; //, * Set system mode. | Mode, as defined by ENUM MAV_MODE | Empty | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_JUMP=177; //, * Jump to the desired command in the mission list. Repeat this action only the specified number of times | Sequence number | Repeat count | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_CHANGE_SPEED=178; //, * Change speed and
-		public final static int MAV_CMD_DO_SET_HOME=179; //, * Changes the home location either to the current location or a specified location. | Use current (1=use current location, 0=use specified location) | Empty | Empty | Empty | Latitude | Longitude | Altitude | *
-		public final static int MAV_CMD_DO_SET_PARAMETER=180; //, * Set a system parameter. Caution! Use of this command requires knowledge of the numeric enumeration value of the parameter. | Parameter number | Parameter value | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_SET_RELAY=181; //, * Set a relay to a condition. | Relay number | Setting (1=on, 0=off, others possible depending on system hardware) | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_REPEAT_RELAY=182; //, * Cycle a relay on and off for a desired number of cyles with a desired period. | Relay number | Cycle count | Cycle time (seconds, decimal) | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_SET_SERVO=183; //, * Set a servo to a desired PWM value. | Servo number | PWM (microseconds, 1000 to 2000 typical) | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_REPEAT_SERVO=184; //, * Cycle a between its nominal setting and a desired PWM for a desired number of cycles with a desired period. | Servo number | PWM (microseconds, 1000 to 2000 typical) | Cycle count | Cycle time (seconds) | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_CONTROL_VIDEO=200; //, * Control onboard camera capturing. | Camera ID (-1 for all) | Transmission: 0: disabled, 1: enabled compressed, 2: enabled raw | Transmission mode: 0: video stream, >0: single images every n seconds (decimal) | Recording: 0: disabled, 1: enabled compressed, 2: enabled raw | Empty | Empty | Empty | *
-		public final static int MAV_CMD_DO_SET_ROI=201; //, * Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various devices such as cameras. | Region of interest mode. (see MAV_ROI enum) | Waypoint index
-		public final static int MAV_CMD_DO_LAST=240; //, * NOP - This command is only used to mark the upper limit of the DO commands in the enumeration | Empty | Empty | Empty | Empty | Empty | Empty | Empty | *
-		public final static int MAV_CMD_PREFLIGHT_CALIBRATION=241; //, * Trigger calibration. This command will be only accepted if in pre-flight mode. | Gyro calibration: 0: no, 1: yes | Magnetometer calibration: 0: no, 1: yes | Ground pressure: 0: no, 1: yes | Radio calibration: 0: no, 1: yes | Empty | Empty | Empty | *
-		public final static int MAV_CMD_PREFLIGHT_STORAGE=245; //, * Request storage of different parameter values and logs. This command will be only accepted if in pre-flight mode. | Parameter storage: 0: READ FROM FLASH
-		public final static int 	MAV_CMD_ENUM_END = 246; //
-	}
-
 	public class MAV_DATA_STREAM{
 		public final static int MAV_DATA_STREAM_ALL=0; //, * Enable all data streams | *
 		public final static int MAV_DATA_STREAM_RAW_SENSORS=1; //, * Enable IMU_RAW, GPS_RAW, GPS_STATUS packets. | *
@@ -107,7 +74,7 @@ public class MAVLink {
 		public final static int MAV_DATA_STREAM_EXTRA1=10; //, * Dependent on the autopilot | *
 		public final static int MAV_DATA_STREAM_EXTRA2=11; //, * Dependent on the autopilot | *
 		public final static int MAV_DATA_STREAM_EXTRA3=12; //, * Dependent on the autopilot | *
-		public final static int 	MAV_DATA_STREAM_ENUM_END = 13; //
+		public final static int MAV_DATA_STREAM_ENUM_END=13; //, *  | *
 	}
 
 	public class MAV_ROI{
@@ -116,7 +83,7 @@ public class MAVLink {
 		public final static int MAV_ROI_WPINDEX=2; //, * Point toward given waypoint. | *
 		public final static int MAV_ROI_LOCATION=3; //, * Point toward fixed location. | *
 		public final static int MAV_ROI_TARGET=4; //, * Point toward of given id. | *
-		public final static int 	MAV_ROI_ENUM_END = 5; //
+		public final static int MAV_ROI_ENUM_END=5; //, *  | *
 	}
 
 	public class MAV_CLASS{
@@ -124,12 +91,12 @@ public class MAVLink {
 		public final static int    MAV_CLASS_PIXHAWK = 1; //,        
 		public final static int    MAV_CLASS_SLUGS = 2; //,          
 		public final static int    MAV_CLASS_ARDUPILOTMEGA = 3; //,  
-		public final static int MAV_CLASS_OPENPILOT = 4; //,      
-		public final static int MAV_CLASS_GENERIC_MISSION_WAYPOINTS_ONLY = 5; //,  
-		public final static int MAV_CLASS_GENERIC_MISSION_NAVIGATION_ONLY = 6; //, 
-		public final static int MAV_CLASS_GENERIC_MISSION_FULL = 7; //,            
-		public final static int MAV_CLASS_NONE = 8; //,           
-		public final static int 	MAV_CLASS_NB                   = 9; //
+		public final static int    MAV_CLASS_OPENPILOT = 4; //,      
+		public final static int    MAV_CLASS_GENERIC_MISSION_WAYPOINTS_ONLY = 5; //,  
+		public final static int    MAV_CLASS_GENERIC_MISSION_NAVIGATION_ONLY = 6; //, 
+		public final static int    MAV_CLASS_GENERIC_MISSION_FULL = 7; //,            
+		public final static int    MAV_CLASS_NONE = 8; //,           
+		public final static int     MAV_CLASS_NB                   = 9; //
 	}
 
 	public class MAV_ACTION{
@@ -174,8 +141,8 @@ public class MAVLink {
 		public final static int    MAV_ACTION_CHANGE_MODE = 38; //,
 		public final static int    MAV_ACTION_LOITER_MAX_TURNS = 39; //,
 		public final static int    MAV_ACTION_LOITER_MAX_TIME = 40; //,
-		public final static int MAV_ACTION_START_HILSIM = 41; //,
-		public final static int MAV_ACTION_STOP_HILSIM = 42; //,    
+		public final static int    MAV_ACTION_START_HILSIM = 41; //,
+		public final static int    MAV_ACTION_STOP_HILSIM = 42; //,    
 		public final static int     MAV_ACTION_NB         = 43; //
 	}
 
@@ -214,7 +181,7 @@ public class MAVLink {
 		public final static int    MAV_NAV_LANDING = 6; //,
 		public final static int    MAV_NAV_LOST = 7; //,
 		public final static int    MAV_NAV_LOITER = 8; //,
-		public final static int 	MAV_NAV_FREE_DRIFT = 9; //
+		public final static int     MAV_NAV_FREE_DRIFT = 9; //
 	}
 
 	public class MAV_TYPE{
@@ -225,11 +192,11 @@ public class MAVLink {
 		public final static int    MAV_HELICOPTER = 4; //,
 		public final static int    MAV_GROUND = 5; //,
 		public final static int    OCU = 6; //,
-		public final static int MAV_AIRSHIP = 7; //,
-		public final static int MAV_FREE_BALLOON = 8; //,
-		public final static int MAV_ROCKET = 9; //,
-		public final static int UGV_GROUND_ROVER = 10; //,
-		public final static int UGV_SURFACE_SHIP = 11; //
+		public final static int    MAV_AIRSHIP = 7; //,
+		public final static int    MAV_FREE_BALLOON = 8; //,
+		public final static int    MAV_ROCKET = 9; //,
+		public final static int    UGV_GROUND_ROVER = 10; //,
+		public final static int     UGV_SURFACE_SHIP = 11; //
 	}
 
 	public class MAV_AUTOPILOT_TYPE{
@@ -237,7 +204,7 @@ public class MAVLink {
 		public final static int    MAV_AUTOPILOT_PIXHAWK = 1; //,
 		public final static int    MAV_AUTOPILOT_SLUGS = 2; //,
 		public final static int    MAV_AUTOPILOT_ARDUPILOTMEGA = 3; //,
-		public final static int MAV_AUTOPILOT_NONE = 4; //
+		public final static int     MAV_AUTOPILOT_NONE = 4; //
 	}
 
 	public class MAV_COMPONENT{
@@ -249,8 +216,8 @@ public class MAVLink {
 		public final static int    MAV_COMP_ID_MAPPER = 5; //,
 		public final static int    MAV_COMP_ID_CAMERA = 6; //,
 		public final static int    MAV_COMP_ID_IMU = 200; //,
-		public final static int MAV_COMP_ID_IMU_2 = 201; //,
-		public final static int MAV_COMP_ID_IMU_3 = 202; //,
+		public final static int    MAV_COMP_ID_IMU_2 = 201; //,
+		public final static int    MAV_COMP_ID_IMU_3 = 202; //,
 		public final static int    MAV_COMP_ID_UDP_BRIDGE = 240; //,
 		public final static int    MAV_COMP_ID_UART_BRIDGE = 241; //,
 		public final static int     MAV_COMP_ID_SYSTEM_CONTROL = 250; //
@@ -260,21 +227,21 @@ public class MAVLink {
 		public final static int    MAV_FRAME_GLOBAL = 0; //,
 		public final static int    MAV_FRAME_LOCAL = 1; //,
 		public final static int    MAV_FRAME_MISSION = 2; //,
-		public final static int MAV_FRAME_GLOBAL_RELATIVE_ALT = 3; //,
-		public final static int         MAV_FRAME_LOCAL_ENU = 4; //
+		public final static int    MAV_FRAME_GLOBAL_RELATIVE_ALT = 3; //,
+		public final static int     MAV_FRAME_LOCAL_ENU = 4; //
 	}
 
 	public class MAVLINK_DATA_STREAM_TYPE{
 		public final static int    MAVLINK_DATA_STREAM_IMG_JPEG = 0; //,
-		public final static int MAVLINK_DATA_STREAM_IMG_BMP = 1; //,
-		public final static int MAVLINK_DATA_STREAM_IMG_RAW8U = 2; //,
-		public final static int MAVLINK_DATA_STREAM_IMG_RAW32U = 3; //,
-		public final static int MAVLINK_DATA_STREAM_IMG_PGM = 4; //,
-		public final static int 	MAVLINK_DATA_STREAM_IMG_PNG = 5; //
+		public final static int    MAVLINK_DATA_STREAM_IMG_BMP = 1; //,
+		public final static int    MAVLINK_DATA_STREAM_IMG_RAW8U = 2; //,
+		public final static int    MAVLINK_DATA_STREAM_IMG_RAW32U = 3; //,
+		public final static int    MAVLINK_DATA_STREAM_IMG_PGM = 4; //,
+		public final static int     MAVLINK_DATA_STREAM_IMG_PNG = 5; //
 	}
 
 	public static String getMavCmd(int a ){
-		return getMAVfield(MAV_CMD.class, a);
+		return "Needs Fixing!"; 		//return getMAVfield(MAV_CMD.class, a);
 	
 	}
 

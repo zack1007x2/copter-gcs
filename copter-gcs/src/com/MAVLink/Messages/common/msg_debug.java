@@ -10,7 +10,7 @@ public class msg_debug extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_DEBUG;
 
-	public 	int ind; ///< index of debug variable
-	public 	float value; ///< DEBUG value
+	public int ind; ///< index of debug variable
+	public float value; ///< DEBUG value
 
 }

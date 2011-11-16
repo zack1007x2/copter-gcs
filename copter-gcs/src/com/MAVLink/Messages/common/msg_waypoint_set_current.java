@@ -10,8 +10,8 @@ public class msg_waypoint_set_current extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_WAYPOINT_SET_CURRENT;
 
-	public 	int target_system; ///< System ID
-	public 	int target_component; ///< Component ID
-	public 	int seq; ///< Sequence
+	public int target_system; ///< System ID
+	public int target_component; ///< Component ID
+	public int seq; ///< Sequence
 
 }

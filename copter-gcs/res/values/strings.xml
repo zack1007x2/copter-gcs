@@ -17,13 +17,13 @@
      <string-array name="mode_array">
         <item>STABILIZE</item>      
         <item>ACRO</item>
-        <item>SIMPLE</item>
         <item>ALT_HOLD</item>
-        <item>AUTO</item>
+        <item>AUTO</item>      
         <item>GUIDED</item>
         <item>LOITER</item>
         <item>RTL</item>
         <item>CIRCLE</item>
+        <item>POSITION</item>
     </string-array>
     
     <string-array name="battery_modes">

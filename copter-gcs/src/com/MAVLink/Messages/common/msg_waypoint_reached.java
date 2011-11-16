@@ -10,6 +10,6 @@ public class msg_waypoint_reached extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_WAYPOINT_REACHED;
 
-	public 	int seq; ///< Sequence
+	public int seq; ///< Sequence
 
 }

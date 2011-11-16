@@ -11,7 +11,7 @@ import com.MAVLink.Messages.IMAVLinkMessage;
 import com.bvcode.ncopter.AC1Data.ProtocolParser;
 import com.bvcode.ncopter.AC1Data.RawByte;
 import com.bvcode.ncopter.comms.CommunicationClient;
-
+ 
 public class CLIActivity extends Activity implements OnClickListener {
 	
 	EditText buffer;

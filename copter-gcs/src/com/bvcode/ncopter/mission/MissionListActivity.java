@@ -119,7 +119,7 @@ public class MissionListActivity extends Activity implements OnItemClickListener
 		    	}
 	    		
 	    		msg.frame = MAVLink.MAV_FRAME.MAV_FRAME_GLOBAL_RELATIVE_ALT;
-	    		msg.command = MAVLink.MAV_CMD.MAV_CMD_NAV_WAYPOINT;	    		
+	    		msg.command = 16;//MAVLink.MAV_CMD.MAV_CMD_NAV_WAYPOINT;	    		
 	    		msg.param1 = msg.param2 = msg.param3 = msg.param4 = 0; 
 	    		msg.autocontinue = 1;
 	    		

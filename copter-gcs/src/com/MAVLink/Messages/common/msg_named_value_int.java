@@ -11,6 +11,6 @@ public class msg_named_value_int extends IMAVLinkMessage{
 	private static final long serialVersionUID = MAVLINK_MSG_ID_NAMED_VALUE_INT;
 
 	public 	char[] name = new char[10];///< Name of the debug variable
-	public 	long value; ///< Signed integer value
+	public long value; ///< Signed integer value
 
 }

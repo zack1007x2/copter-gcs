@@ -10,7 +10,7 @@ public class msg_set_altitude extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_SET_ALTITUDE;
 
-	public 	int target; ///< The system setting the altitude
-	public 	long mode; ///< The new altitude in meters
+	public int target; ///< The system setting the altitude
+	public long mode; ///< The new altitude in meters
 
 }

@@ -10,7 +10,7 @@ public class msg_set_mode extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_SET_MODE;
 
-	public 	int target; ///< The system setting the mode
-	public 	int mode; ///< The new mode
+	public int target; ///< The system setting the mode
+	public int mode; ///< The new mode
 
 }

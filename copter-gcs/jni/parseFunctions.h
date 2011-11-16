@@ -41,7 +41,7 @@ void pack_msg_heartbeat(JNIEnv *env, jclass& classType, jobject& obj, mavlink_me
 	uint8_t mavlink_version = (uint8_t)env->GetIntField (obj, env->GetFieldID(heartbeat_class, "mavlink_version", "I"));
 
 
-	mavlink_msg_heartbeat_pack(system_id, component_id, &msg, type, autopilot);
+	mavlink_msg_heartbeat_pack(system_id, component_id, &msg,type, autopilot);
 
 }
 
@@ -78,7 +78,7 @@ void pack_msg_boot(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message
 	uint32_t version = (uint32_t)env->GetLongField (obj, env->GetFieldID(boot_class, "version", "J"));
 
 
-	mavlink_msg_boot_pack(system_id, component_id, &msg, version);
+	mavlink_msg_boot_pack(system_id, component_id, &msg,version);
 
 }
 
@@ -115,7 +115,7 @@ void pack_msg_system_time(JNIEnv *env, jclass& classType, jobject& obj, mavlink_
 	uint64_t time_usec = (uint64_t)env->GetLongField (obj, env->GetFieldID(system_time_class, "time_usec", "J"));
 
 
-	mavlink_msg_system_time_pack(system_id, component_id, &msg, time_usec);
+	mavlink_msg_system_time_pack(system_id, component_id, &msg,time_usec);
 
 }
 
@@ -164,7 +164,7 @@ void pack_msg_ping(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message
 	uint64_t time = (uint64_t)env->GetLongField (obj, env->GetFieldID(ping_class, "time", "J"));
 
 
-	mavlink_msg_ping_pack(system_id, component_id, &msg, seq, target_system, target_component, time);
+	mavlink_msg_ping_pack(system_id, component_id, &msg,seq, target_system, target_component, time);
 
 }
 
@@ -205,7 +205,7 @@ void pack_msg_system_time_utc(JNIEnv *env, jclass& classType, jobject& obj, mavl
 	uint32_t utc_time = (uint32_t)env->GetLongField (obj, env->GetFieldID(system_time_utc_class, "utc_time", "J"));
 
 
-	mavlink_msg_system_time_utc_pack(system_id, component_id, &msg, utc_date, utc_time);
+	mavlink_msg_system_time_utc_pack(system_id, component_id, &msg,utc_date, utc_time);
 
 }
 
@@ -272,7 +272,7 @@ void pack_msg_change_operator_control(JNIEnv *env, jclass& classType, jobject& o
 	}
 
 
-	mavlink_msg_change_operator_control_pack(system_id, component_id, &msg, target_system, control_request, version, passkey);
+	mavlink_msg_change_operator_control_pack(system_id, component_id, &msg,target_system, control_request, version, passkey);
 
 }
 
@@ -317,7 +317,7 @@ void pack_msg_change_operator_control_ack(JNIEnv *env, jclass& classType, jobjec
 	uint8_t ack = (uint8_t)env->GetIntField (obj, env->GetFieldID(change_operator_control_ack_class, "ack", "I"));
 
 
-	mavlink_msg_change_operator_control_ack_pack(system_id, component_id, &msg, gcs_system_id, control_request, ack);
+	mavlink_msg_change_operator_control_ack_pack(system_id, component_id, &msg,gcs_system_id, control_request, ack);
 
 }
 
@@ -372,7 +372,7 @@ void pack_msg_auth_key(JNIEnv *env, jclass& classType, jobject& obj, mavlink_mes
 	}
 
 
-	mavlink_msg_auth_key_pack(system_id, component_id, &msg, key);
+	mavlink_msg_auth_key_pack(system_id, component_id, &msg,key);
 
 }
 
@@ -413,7 +413,7 @@ void pack_msg_action_ack(JNIEnv *env, jclass& classType, jobject& obj, mavlink_m
 	uint8_t result = (uint8_t)env->GetIntField (obj, env->GetFieldID(action_ack_class, "result", "I"));
 
 
-	mavlink_msg_action_ack_pack(system_id, component_id, &msg, action, result);
+	mavlink_msg_action_ack_pack(system_id, component_id, &msg,action, result);
 
 }
 
@@ -458,7 +458,7 @@ void pack_msg_action(JNIEnv *env, jclass& classType, jobject& obj, mavlink_messa
 	uint8_t action = (uint8_t)env->GetIntField (obj, env->GetFieldID(action_class, "action", "I"));
 
 
-	mavlink_msg_action_pack(system_id, component_id, &msg, target, target_component, action);
+	mavlink_msg_action_pack(system_id, component_id, &msg,target, target_component, action);
 
 }
 
@@ -499,7 +499,7 @@ void pack_msg_set_mode(JNIEnv *env, jclass& classType, jobject& obj, mavlink_mes
 	uint8_t mode = (uint8_t)env->GetIntField (obj, env->GetFieldID(set_mode_class, "mode", "I"));
 
 
-	mavlink_msg_set_mode_pack(system_id, component_id, &msg, target, mode);
+	mavlink_msg_set_mode_pack(system_id, component_id, &msg,target, mode);
 
 }
 
@@ -540,7 +540,7 @@ void pack_msg_set_nav_mode(JNIEnv *env, jclass& classType, jobject& obj, mavlink
 	uint8_t nav_mode = (uint8_t)env->GetIntField (obj, env->GetFieldID(set_nav_mode_class, "nav_mode", "I"));
 
 
-	mavlink_msg_set_nav_mode_pack(system_id, component_id, &msg, target, nav_mode);
+	mavlink_msg_set_nav_mode_pack(system_id, component_id, &msg,target, nav_mode);
 
 }
 
@@ -609,7 +609,7 @@ int8_t param_id[15];
 	int16_t param_index = (int16_t)env->GetIntField (obj, env->GetFieldID(param_request_read_class, "param_index", "I"));
 
 
-	mavlink_msg_param_request_read_pack(system_id, component_id, &msg, target_system, target_component, param_id, param_index);
+	mavlink_msg_param_request_read_pack(system_id, component_id, &msg,target_system, target_component, param_id, param_index);
 
 }
 
@@ -650,7 +650,7 @@ void pack_msg_param_request_list(JNIEnv *env, jclass& classType, jobject& obj, m
 	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(param_request_list_class, "target_component", "I"));
 
 
-	mavlink_msg_param_request_list_pack(system_id, component_id, &msg, target_system, target_component);
+	mavlink_msg_param_request_list_pack(system_id, component_id, &msg,target_system, target_component);
 
 }
 
@@ -719,7 +719,7 @@ int8_t param_id[15];
 	uint16_t param_index = (uint16_t)env->GetIntField (obj, env->GetFieldID(param_value_class, "param_index", "I"));
 
 
-	mavlink_msg_param_value_pack(system_id, component_id, &msg, param_id, param_value, param_count, param_index);
+	mavlink_msg_param_value_pack(system_id, component_id, &msg,param_id, param_value, param_count, param_index);
 
 }
 
@@ -788,7 +788,7 @@ int8_t param_id[15];
 	float param_value = (float)env->GetFloatField (obj, env->GetFieldID(param_set_class, "param_value", "F"));
 
 
-	mavlink_msg_param_set_pack(system_id, component_id, &msg, target_system, target_component, param_id, param_value);
+	mavlink_msg_param_set_pack(system_id, component_id, &msg,target_system, target_component, param_id, param_value);
 
 }
 
@@ -857,7 +857,7 @@ void pack_msg_gps_raw_int(JNIEnv *env, jclass& classType, jobject& obj, mavlink_
 	float hdg = (float)env->GetFloatField (obj, env->GetFieldID(gps_raw_int_class, "hdg", "F"));
 
 
-	mavlink_msg_gps_raw_int_pack(system_id, component_id, &msg, usec, fix_type, lat, lon, alt, eph, epv, v, hdg);
+	mavlink_msg_gps_raw_int_pack(system_id, component_id, &msg,usec, fix_type, lat, lon, alt, eph, epv, v, hdg);
 
 }
 
@@ -930,7 +930,7 @@ void pack_msg_scaled_imu(JNIEnv *env, jclass& classType, jobject& obj, mavlink_m
 	int16_t zmag = (int16_t)env->GetIntField (obj, env->GetFieldID(scaled_imu_class, "zmag", "I"));
 
 
-	mavlink_msg_scaled_imu_pack(system_id, component_id, &msg, usec, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag, ymag, zmag);
+	mavlink_msg_scaled_imu_pack(system_id, component_id, &msg,usec, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag, ymag, zmag);
 
 }
 
@@ -1087,7 +1087,7 @@ int8_t satellite_snr[20];
 	}
 
 
-	mavlink_msg_gps_status_pack(system_id, component_id, &msg, satellites_visible, satellite_prn, satellite_used, satellite_elevation, satellite_azimuth, satellite_snr);
+	mavlink_msg_gps_status_pack(system_id, component_id, &msg,satellites_visible, satellite_prn, satellite_used, satellite_elevation, satellite_azimuth, satellite_snr);
 
 }
 
@@ -1160,7 +1160,7 @@ void pack_msg_raw_imu(JNIEnv *env, jclass& classType, jobject& obj, mavlink_mess
 	int16_t zmag = (int16_t)env->GetIntField (obj, env->GetFieldID(raw_imu_class, "zmag", "I"));
 
 
-	mavlink_msg_raw_imu_pack(system_id, component_id, &msg, usec, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag, ymag, zmag);
+	mavlink_msg_raw_imu_pack(system_id, component_id, &msg,usec, xacc, yacc, zacc, xgyro, ygyro, zgyro, xmag, ymag, zmag);
 
 }
 
@@ -1213,7 +1213,7 @@ void pack_msg_raw_pressure(JNIEnv *env, jclass& classType, jobject& obj, mavlink
 	int16_t temperature = (int16_t)env->GetIntField (obj, env->GetFieldID(raw_pressure_class, "temperature", "I"));
 
 
-	mavlink_msg_raw_pressure_pack(system_id, component_id, &msg, usec, press_abs, press_diff1, press_diff2, temperature);
+	mavlink_msg_raw_pressure_pack(system_id, component_id, &msg,usec, press_abs, press_diff1, press_diff2, temperature);
 
 }
 
@@ -1262,7 +1262,7 @@ void pack_msg_scaled_pressure(JNIEnv *env, jclass& classType, jobject& obj, mavl
 	int16_t temperature = (int16_t)env->GetIntField (obj, env->GetFieldID(scaled_pressure_class, "temperature", "I"));
 
 
-	mavlink_msg_scaled_pressure_pack(system_id, component_id, &msg, usec, press_abs, press_diff, temperature);
+	mavlink_msg_scaled_pressure_pack(system_id, component_id, &msg,usec, press_abs, press_diff, temperature);
 
 }
 
@@ -1323,7 +1323,7 @@ void pack_msg_attitude(JNIEnv *env, jclass& classType, jobject& obj, mavlink_mes
 	float yawspeed = (float)env->GetFloatField (obj, env->GetFieldID(attitude_class, "yawspeed", "F"));
 
 
-	mavlink_msg_attitude_pack(system_id, component_id, &msg, usec, roll, pitch, yaw, rollspeed, pitchspeed, yawspeed);
+	mavlink_msg_attitude_pack(system_id, component_id, &msg,usec, roll, pitch, yaw, rollspeed, pitchspeed, yawspeed);
 
 }
 
@@ -1384,7 +1384,7 @@ void pack_msg_local_position(JNIEnv *env, jclass& classType, jobject& obj, mavli
 	float vz = (float)env->GetFloatField (obj, env->GetFieldID(local_position_class, "vz", "F"));
 
 
-	mavlink_msg_local_position_pack(system_id, component_id, &msg, usec, x, y, z, vx, vy, vz);
+	mavlink_msg_local_position_pack(system_id, component_id, &msg,usec, x, y, z, vx, vy, vz);
 
 }
 
@@ -1445,7 +1445,7 @@ void pack_msg_global_position(JNIEnv *env, jclass& classType, jobject& obj, mavl
 	float vz = (float)env->GetFloatField (obj, env->GetFieldID(global_position_class, "vz", "F"));
 
 
-	mavlink_msg_global_position_pack(system_id, component_id, &msg, usec, lat, lon, alt, vx, vy, vz);
+	mavlink_msg_global_position_pack(system_id, component_id, &msg,usec, lat, lon, alt, vx, vy, vz);
 
 }
 
@@ -1514,7 +1514,7 @@ void pack_msg_gps_raw(JNIEnv *env, jclass& classType, jobject& obj, mavlink_mess
 	float hdg = (float)env->GetFloatField (obj, env->GetFieldID(gps_raw_class, "hdg", "F"));
 
 
-	mavlink_msg_gps_raw_pack(system_id, component_id, &msg, usec, fix_type, lat, lon, alt, eph, epv, v, hdg);
+	mavlink_msg_gps_raw_pack(system_id, component_id, &msg,usec, fix_type, lat, lon, alt, eph, epv, v, hdg);
 
 }
 
@@ -1575,7 +1575,7 @@ void pack_msg_sys_status(JNIEnv *env, jclass& classType, jobject& obj, mavlink_m
 	uint16_t packet_drop = (uint16_t)env->GetIntField (obj, env->GetFieldID(sys_status_class, "packet_drop", "I"));
 
 
-	mavlink_msg_sys_status_pack(system_id, component_id, &msg, mode, nav_mode, status, load, vbat, battery_remaining, packet_drop);
+	mavlink_msg_sys_status_pack(system_id, component_id, &msg,mode, nav_mode, status, load, vbat, battery_remaining, packet_drop);
 
 }
 
@@ -1644,7 +1644,7 @@ void pack_msg_rc_channels_raw(JNIEnv *env, jclass& classType, jobject& obj, mavl
 	uint8_t rssi = (uint8_t)env->GetIntField (obj, env->GetFieldID(rc_channels_raw_class, "rssi", "I"));
 
 
-	mavlink_msg_rc_channels_raw_pack(system_id, component_id, &msg, chan1_raw, chan2_raw, chan3_raw, chan4_raw, chan5_raw, chan6_raw, chan7_raw, chan8_raw, rssi);
+	mavlink_msg_rc_channels_raw_pack(system_id, component_id, &msg,chan1_raw, chan2_raw, chan3_raw, chan4_raw, chan5_raw, chan6_raw, chan7_raw, chan8_raw, rssi);
 
 }
 
@@ -1713,7 +1713,7 @@ void pack_msg_rc_channels_scaled(JNIEnv *env, jclass& classType, jobject& obj, m
 	uint8_t rssi = (uint8_t)env->GetIntField (obj, env->GetFieldID(rc_channels_scaled_class, "rssi", "I"));
 
 
-	mavlink_msg_rc_channels_scaled_pack(system_id, component_id, &msg, chan1_scaled, chan2_scaled, chan3_scaled, chan4_scaled, chan5_scaled, chan6_scaled, chan7_scaled, chan8_scaled, rssi);
+	mavlink_msg_rc_channels_scaled_pack(system_id, component_id, &msg,chan1_scaled, chan2_scaled, chan3_scaled, chan4_scaled, chan5_scaled, chan6_scaled, chan7_scaled, chan8_scaled, rssi);
 
 }
 
@@ -1778,7 +1778,7 @@ void pack_msg_servo_output_raw(JNIEnv *env, jclass& classType, jobject& obj, mav
 	uint16_t servo8_raw = (uint16_t)env->GetIntField (obj, env->GetFieldID(servo_output_raw_class, "servo8_raw", "I"));
 
 
-	mavlink_msg_servo_output_raw_pack(system_id, component_id, &msg, servo1_raw, servo2_raw, servo3_raw, servo4_raw, servo5_raw, servo6_raw, servo7_raw, servo8_raw);
+	mavlink_msg_servo_output_raw_pack(system_id, component_id, &msg,servo1_raw, servo2_raw, servo3_raw, servo4_raw, servo5_raw, servo6_raw, servo7_raw, servo8_raw);
 
 }
 
@@ -1867,7 +1867,7 @@ void pack_msg_waypoint(JNIEnv *env, jclass& classType, jobject& obj, mavlink_mes
 	float z = (float)env->GetFloatField (obj, env->GetFieldID(waypoint_class, "z", "F"));
 
 
-	mavlink_msg_waypoint_pack(system_id, component_id, &msg, target_system, target_component, seq, frame, command, current, autocontinue, param1, param2, param3, param4, x, y, z);
+	mavlink_msg_waypoint_pack(system_id, component_id, &msg,target_system, target_component, seq, frame, command, current, autocontinue, param1, param2, param3, param4, x, y, z);
 
 }
 
@@ -1912,7 +1912,7 @@ void pack_msg_waypoint_request(JNIEnv *env, jclass& classType, jobject& obj, mav
 	uint16_t seq = (uint16_t)env->GetIntField (obj, env->GetFieldID(waypoint_request_class, "seq", "I"));
 
 
-	mavlink_msg_waypoint_request_pack(system_id, component_id, &msg, target_system, target_component, seq);
+	mavlink_msg_waypoint_request_pack(system_id, component_id, &msg,target_system, target_component, seq);
 
 }
 
@@ -1957,7 +1957,7 @@ void pack_msg_waypoint_set_current(JNIEnv *env, jclass& classType, jobject& obj,
 	uint16_t seq = (uint16_t)env->GetIntField (obj, env->GetFieldID(waypoint_set_current_class, "seq", "I"));
 
 
-	mavlink_msg_waypoint_set_current_pack(system_id, component_id, &msg, target_system, target_component, seq);
+	mavlink_msg_waypoint_set_current_pack(system_id, component_id, &msg,target_system, target_component, seq);
 
 }
 
@@ -1994,7 +1994,7 @@ void pack_msg_waypoint_current(JNIEnv *env, jclass& classType, jobject& obj, mav
 	uint16_t seq = (uint16_t)env->GetIntField (obj, env->GetFieldID(waypoint_current_class, "seq", "I"));
 
 
-	mavlink_msg_waypoint_current_pack(system_id, component_id, &msg, seq);
+	mavlink_msg_waypoint_current_pack(system_id, component_id, &msg,seq);
 
 }
 
@@ -2035,7 +2035,7 @@ void pack_msg_waypoint_request_list(JNIEnv *env, jclass& classType, jobject& obj
 	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(waypoint_request_list_class, "target_component", "I"));
 
 
-	mavlink_msg_waypoint_request_list_pack(system_id, component_id, &msg, target_system, target_component);
+	mavlink_msg_waypoint_request_list_pack(system_id, component_id, &msg,target_system, target_component);
 
 }
 
@@ -2080,7 +2080,7 @@ void pack_msg_waypoint_count(JNIEnv *env, jclass& classType, jobject& obj, mavli
 	uint16_t count = (uint16_t)env->GetIntField (obj, env->GetFieldID(waypoint_count_class, "count", "I"));
 
 
-	mavlink_msg_waypoint_count_pack(system_id, component_id, &msg, target_system, target_component, count);
+	mavlink_msg_waypoint_count_pack(system_id, component_id, &msg,target_system, target_component, count);
 
 }
 
@@ -2121,7 +2121,7 @@ void pack_msg_waypoint_clear_all(JNIEnv *env, jclass& classType, jobject& obj, m
 	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(waypoint_clear_all_class, "target_component", "I"));
 
 
-	mavlink_msg_waypoint_clear_all_pack(system_id, component_id, &msg, target_system, target_component);
+	mavlink_msg_waypoint_clear_all_pack(system_id, component_id, &msg,target_system, target_component);
 
 }
 
@@ -2158,7 +2158,7 @@ void pack_msg_waypoint_reached(JNIEnv *env, jclass& classType, jobject& obj, mav
 	uint16_t seq = (uint16_t)env->GetIntField (obj, env->GetFieldID(waypoint_reached_class, "seq", "I"));
 
 
-	mavlink_msg_waypoint_reached_pack(system_id, component_id, &msg, seq);
+	mavlink_msg_waypoint_reached_pack(system_id, component_id, &msg,seq);
 
 }
 
@@ -2203,7 +2203,7 @@ void pack_msg_waypoint_ack(JNIEnv *env, jclass& classType, jobject& obj, mavlink
 	uint8_t type = (uint8_t)env->GetIntField (obj, env->GetFieldID(waypoint_ack_class, "type", "I"));
 
 
-	mavlink_msg_waypoint_ack_pack(system_id, component_id, &msg, target_system, target_component, type);
+	mavlink_msg_waypoint_ack_pack(system_id, component_id, &msg,target_system, target_component, type);
 
 }
 
@@ -2256,7 +2256,7 @@ void pack_msg_gps_set_global_origin(JNIEnv *env, jclass& classType, jobject& obj
 	int32_t altitude = (int32_t)env->GetLongField (obj, env->GetFieldID(gps_set_global_origin_class, "altitude", "J"));
 
 
-	mavlink_msg_gps_set_global_origin_pack(system_id, component_id, &msg, target_system, target_component, latitude, longitude, altitude);
+	mavlink_msg_gps_set_global_origin_pack(system_id, component_id, &msg,target_system, target_component, latitude, longitude, altitude);
 
 }
 
@@ -2301,7 +2301,7 @@ void pack_msg_gps_local_origin_set(JNIEnv *env, jclass& classType, jobject& obj,
 	int32_t altitude = (int32_t)env->GetLongField (obj, env->GetFieldID(gps_local_origin_set_class, "altitude", "J"));
 
 
-	mavlink_msg_gps_local_origin_set_pack(system_id, component_id, &msg, latitude, longitude, altitude);
+	mavlink_msg_gps_local_origin_set_pack(system_id, component_id, &msg,latitude, longitude, altitude);
 
 }
 
@@ -2358,7 +2358,7 @@ void pack_msg_local_position_setpoint_set(JNIEnv *env, jclass& classType, jobjec
 	float yaw = (float)env->GetFloatField (obj, env->GetFieldID(local_position_setpoint_set_class, "yaw", "F"));
 
 
-	mavlink_msg_local_position_setpoint_set_pack(system_id, component_id, &msg, target_system, target_component, x, y, z, yaw);
+	mavlink_msg_local_position_setpoint_set_pack(system_id, component_id, &msg,target_system, target_component, x, y, z, yaw);
 
 }
 
@@ -2407,7 +2407,7 @@ void pack_msg_local_position_setpoint(JNIEnv *env, jclass& classType, jobject& o
 	float yaw = (float)env->GetFloatField (obj, env->GetFieldID(local_position_setpoint_class, "yaw", "F"));
 
 
-	mavlink_msg_local_position_setpoint_pack(system_id, component_id, &msg, x, y, z, yaw);
+	mavlink_msg_local_position_setpoint_pack(system_id, component_id, &msg,x, y, z, yaw);
 
 }
 
@@ -2472,7 +2472,7 @@ void pack_msg_control_status(JNIEnv *env, jclass& classType, jobject& obj, mavli
 	uint8_t control_pos_yaw = (uint8_t)env->GetIntField (obj, env->GetFieldID(control_status_class, "control_pos_yaw", "I"));
 
 
-	mavlink_msg_control_status_pack(system_id, component_id, &msg, position_fix, vision_fix, gps_fix, ahrs_health, control_att, control_pos_xy, control_pos_z, control_pos_yaw);
+	mavlink_msg_control_status_pack(system_id, component_id, &msg,position_fix, vision_fix, gps_fix, ahrs_health, control_att, control_pos_xy, control_pos_z, control_pos_yaw);
 
 }
 
@@ -2541,7 +2541,7 @@ void pack_msg_safety_set_allowed_area(JNIEnv *env, jclass& classType, jobject& o
 	float p2z = (float)env->GetFloatField (obj, env->GetFieldID(safety_set_allowed_area_class, "p2z", "F"));
 
 
-	mavlink_msg_safety_set_allowed_area_pack(system_id, component_id, &msg, target_system, target_component, frame, p1x, p1y, p1z, p2x, p2y, p2z);
+	mavlink_msg_safety_set_allowed_area_pack(system_id, component_id, &msg,target_system, target_component, frame, p1x, p1y, p1z, p2x, p2y, p2z);
 
 }
 
@@ -2602,7 +2602,7 @@ void pack_msg_safety_allowed_area(JNIEnv *env, jclass& classType, jobject& obj, 
 	float p2z = (float)env->GetFloatField (obj, env->GetFieldID(safety_allowed_area_class, "p2z", "F"));
 
 
-	mavlink_msg_safety_allowed_area_pack(system_id, component_id, &msg, frame, p1x, p1y, p1z, p2x, p2y, p2z);
+	mavlink_msg_safety_allowed_area_pack(system_id, component_id, &msg,frame, p1x, p1y, p1z, p2x, p2y, p2z);
 
 }
 
@@ -2659,7 +2659,7 @@ void pack_msg_set_roll_pitch_yaw_thrust(JNIEnv *env, jclass& classType, jobject&
 	float thrust = (float)env->GetFloatField (obj, env->GetFieldID(set_roll_pitch_yaw_thrust_class, "thrust", "F"));
 
 
-	mavlink_msg_set_roll_pitch_yaw_thrust_pack(system_id, component_id, &msg, target_system, target_component, roll, pitch, yaw, thrust);
+	mavlink_msg_set_roll_pitch_yaw_thrust_pack(system_id, component_id, &msg,target_system, target_component, roll, pitch, yaw, thrust);
 
 }
 
@@ -2716,7 +2716,7 @@ void pack_msg_set_roll_pitch_yaw_speed_thrust(JNIEnv *env, jclass& classType, jo
 	float thrust = (float)env->GetFloatField (obj, env->GetFieldID(set_roll_pitch_yaw_speed_thrust_class, "thrust", "F"));
 
 
-	mavlink_msg_set_roll_pitch_yaw_speed_thrust_pack(system_id, component_id, &msg, target_system, target_component, roll_speed, pitch_speed, yaw_speed, thrust);
+	mavlink_msg_set_roll_pitch_yaw_speed_thrust_pack(system_id, component_id, &msg,target_system, target_component, roll_speed, pitch_speed, yaw_speed, thrust);
 
 }
 
@@ -2734,8 +2734,8 @@ jobject unpack_msg_roll_pitch_yaw_thrust_setpoint(JNIEnv *env, mavlink_message_t
 	
 	//Set values
 	jfieldID fid;
-	fid = env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "time_ms", "J");
-	env->SetLongField (result, fid, (long) inp.time_ms);
+	fid = env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "time_us", "J");
+	env->SetLongField (result, fid, (long) inp.time_us);
 
 	fid = env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "roll", "F");
 	env->SetFloatField (result, fid, (float)inp.roll);
@@ -2762,14 +2762,14 @@ jobject unpack_msg_roll_pitch_yaw_thrust_setpoint(JNIEnv *env, mavlink_message_t
 }
 
 void pack_msg_roll_pitch_yaw_thrust_setpoint(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
-	uint32_t time_ms = (uint32_t)env->GetLongField (obj, env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "time_ms", "J"));
+	uint64_t time_us = (uint64_t)env->GetLongField (obj, env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "time_us", "J"));
 	float roll = (float)env->GetFloatField (obj, env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "roll", "F"));
 	float pitch = (float)env->GetFloatField (obj, env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "pitch", "F"));
 	float yaw = (float)env->GetFloatField (obj, env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "yaw", "F"));
 	float thrust = (float)env->GetFloatField (obj, env->GetFieldID(roll_pitch_yaw_thrust_setpoint_class, "thrust", "F"));
 
 
-	mavlink_msg_roll_pitch_yaw_thrust_setpoint_pack(system_id, component_id, &msg, time_ms, roll, pitch, yaw, thrust);
+	mavlink_msg_roll_pitch_yaw_thrust_setpoint_pack(system_id, component_id, &msg,time_us, roll, pitch, yaw, thrust);
 
 }
 
@@ -2787,8 +2787,8 @@ jobject unpack_msg_roll_pitch_yaw_speed_thrust_setpoint(JNIEnv *env, mavlink_mes
 	
 	//Set values
 	jfieldID fid;
-	fid = env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "time_ms", "J");
-	env->SetLongField (result, fid, (long) inp.time_ms);
+	fid = env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "time_us", "J");
+	env->SetLongField (result, fid, (long) inp.time_us);
 
 	fid = env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "roll_speed", "F");
 	env->SetFloatField (result, fid, (float)inp.roll_speed);
@@ -2815,14 +2815,14 @@ jobject unpack_msg_roll_pitch_yaw_speed_thrust_setpoint(JNIEnv *env, mavlink_mes
 }
 
 void pack_msg_roll_pitch_yaw_speed_thrust_setpoint(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
-	uint32_t time_ms = (uint32_t)env->GetLongField (obj, env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "time_ms", "J"));
+	uint64_t time_us = (uint64_t)env->GetLongField (obj, env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "time_us", "J"));
 	float roll_speed = (float)env->GetFloatField (obj, env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "roll_speed", "F"));
 	float pitch_speed = (float)env->GetFloatField (obj, env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "pitch_speed", "F"));
 	float yaw_speed = (float)env->GetFloatField (obj, env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "yaw_speed", "F"));
 	float thrust = (float)env->GetFloatField (obj, env->GetFieldID(roll_pitch_yaw_speed_thrust_setpoint_class, "thrust", "F"));
 
 
-	mavlink_msg_roll_pitch_yaw_speed_thrust_setpoint_pack(system_id, component_id, &msg, time_ms, roll_speed, pitch_speed, yaw_speed, thrust);
+	mavlink_msg_roll_pitch_yaw_speed_thrust_setpoint_pack(system_id, component_id, &msg,time_us, roll_speed, pitch_speed, yaw_speed, thrust);
 
 }
 
@@ -2887,7 +2887,7 @@ void pack_msg_nav_controller_output(JNIEnv *env, jclass& classType, jobject& obj
 	float xtrack_error = (float)env->GetFloatField (obj, env->GetFieldID(nav_controller_output_class, "xtrack_error", "F"));
 
 
-	mavlink_msg_nav_controller_output_pack(system_id, component_id, &msg, nav_roll, nav_pitch, nav_bearing, target_bearing, wp_dist, alt_error, aspd_error, xtrack_error);
+	mavlink_msg_nav_controller_output_pack(system_id, component_id, &msg,nav_roll, nav_pitch, nav_bearing, target_bearing, wp_dist, alt_error, aspd_error, xtrack_error);
 
 }
 
@@ -2936,7 +2936,7 @@ void pack_msg_position_target(JNIEnv *env, jclass& classType, jobject& obj, mavl
 	float yaw = (float)env->GetFloatField (obj, env->GetFieldID(position_target_class, "yaw", "F"));
 
 
-	mavlink_msg_position_target_pack(system_id, component_id, &msg, x, y, z, yaw);
+	mavlink_msg_position_target_pack(system_id, component_id, &msg,x, y, z, yaw);
 
 }
 
@@ -3005,7 +3005,7 @@ void pack_msg_state_correction(JNIEnv *env, jclass& classType, jobject& obj, mav
 	float vzErr = (float)env->GetFloatField (obj, env->GetFieldID(state_correction_class, "vzErr", "F"));
 
 
-	mavlink_msg_state_correction_pack(system_id, component_id, &msg, xErr, yErr, zErr, rollErr, pitchErr, yawErr, vxErr, vyErr, vzErr);
+	mavlink_msg_state_correction_pack(system_id, component_id, &msg,xErr, yErr, zErr, rollErr, pitchErr, yawErr, vxErr, vyErr, vzErr);
 
 }
 
@@ -3046,7 +3046,7 @@ void pack_msg_set_altitude(JNIEnv *env, jclass& classType, jobject& obj, mavlink
 	uint32_t mode = (uint32_t)env->GetLongField (obj, env->GetFieldID(set_altitude_class, "mode", "J"));
 
 
-	mavlink_msg_set_altitude_pack(system_id, component_id, &msg, target, mode);
+	mavlink_msg_set_altitude_pack(system_id, component_id, &msg,target, mode);
 
 }
 
@@ -3099,7 +3099,7 @@ void pack_msg_request_data_stream(JNIEnv *env, jclass& classType, jobject& obj, 
 	uint8_t start_stop = (uint8_t)env->GetIntField (obj, env->GetFieldID(request_data_stream_class, "start_stop", "I"));
 
 
-	mavlink_msg_request_data_stream_pack(system_id, component_id, &msg, target_system, target_component, req_stream_id, req_message_rate, start_stop);
+	mavlink_msg_request_data_stream_pack(system_id, component_id, &msg,target_system, target_component, req_stream_id, req_message_rate, start_stop);
 
 }
 
@@ -3196,7 +3196,7 @@ void pack_msg_hil_state(JNIEnv *env, jclass& classType, jobject& obj, mavlink_me
 	int16_t zacc = (int16_t)env->GetIntField (obj, env->GetFieldID(hil_state_class, "zacc", "I"));
 
 
-	mavlink_msg_hil_state_pack(system_id, component_id, &msg, usec, roll, pitch, yaw, rollspeed, pitchspeed, yawspeed, lat, lon, alt, vx, vy, vz, xacc, yacc, zacc);
+	mavlink_msg_hil_state_pack(system_id, component_id, &msg,usec, roll, pitch, yaw, rollspeed, pitchspeed, yawspeed, lat, lon, alt, vx, vy, vz, xacc, yacc, zacc);
 
 }
 
@@ -3257,7 +3257,7 @@ void pack_msg_hil_controls(JNIEnv *env, jclass& classType, jobject& obj, mavlink
 	uint8_t nav_mode = (uint8_t)env->GetIntField (obj, env->GetFieldID(hil_controls_class, "nav_mode", "I"));
 
 
-	mavlink_msg_hil_controls_pack(system_id, component_id, &msg, time_us, roll_ailerons, pitch_elevator, yaw_rudder, throttle, mode, nav_mode);
+	mavlink_msg_hil_controls_pack(system_id, component_id, &msg,time_us, roll_ailerons, pitch_elevator, yaw_rudder, throttle, mode, nav_mode);
 
 }
 
@@ -3326,7 +3326,7 @@ void pack_msg_manual_control(JNIEnv *env, jclass& classType, jobject& obj, mavli
 	uint8_t thrust_manual = (uint8_t)env->GetIntField (obj, env->GetFieldID(manual_control_class, "thrust_manual", "I"));
 
 
-	mavlink_msg_manual_control_pack(system_id, component_id, &msg, target, roll, pitch, yaw, thrust, roll_manual, pitch_manual, yaw_manual, thrust_manual);
+	mavlink_msg_manual_control_pack(system_id, component_id, &msg,target, roll, pitch, yaw, thrust, roll_manual, pitch_manual, yaw_manual, thrust_manual);
 
 }
 
@@ -3399,7 +3399,7 @@ void pack_msg_rc_channels_override(JNIEnv *env, jclass& classType, jobject& obj,
 	uint16_t chan8_raw = (uint16_t)env->GetIntField (obj, env->GetFieldID(rc_channels_override_class, "chan8_raw", "I"));
 
 
-	mavlink_msg_rc_channels_override_pack(system_id, component_id, &msg, target_system, target_component, chan1_raw, chan2_raw, chan3_raw, chan4_raw, chan5_raw, chan6_raw, chan7_raw, chan8_raw);
+	mavlink_msg_rc_channels_override_pack(system_id, component_id, &msg,target_system, target_component, chan1_raw, chan2_raw, chan3_raw, chan4_raw, chan5_raw, chan6_raw, chan7_raw, chan8_raw);
 
 }
 
@@ -3456,7 +3456,7 @@ void pack_msg_global_position_int(JNIEnv *env, jclass& classType, jobject& obj, 
 	int16_t vz = (int16_t)env->GetIntField (obj, env->GetFieldID(global_position_int_class, "vz", "I"));
 
 
-	mavlink_msg_global_position_int_pack(system_id, component_id, &msg, lat, lon, alt, vx, vy, vz);
+	mavlink_msg_global_position_int_pack(system_id, component_id, &msg,lat, lon, alt, vx, vy, vz);
 
 }
 
@@ -3513,7 +3513,7 @@ void pack_msg_vfr_hud(JNIEnv *env, jclass& classType, jobject& obj, mavlink_mess
 	float climb = (float)env->GetFloatField (obj, env->GetFieldID(vfr_hud_class, "climb", "F"));
 
 
-	mavlink_msg_vfr_hud_pack(system_id, component_id, &msg, airspeed, groundspeed, heading, throttle, alt, climb);
+	mavlink_msg_vfr_hud_pack(system_id, component_id, &msg,airspeed, groundspeed, heading, throttle, alt, climb);
 
 }
 
@@ -3578,7 +3578,7 @@ void pack_msg_command(JNIEnv *env, jclass& classType, jobject& obj, mavlink_mess
 	float param4 = (float)env->GetFloatField (obj, env->GetFieldID(command_class, "param4", "F"));
 
 
-	mavlink_msg_command_pack(system_id, component_id, &msg, target_system, target_component, command, confirmation, param1, param2, param3, param4);
+	mavlink_msg_command_pack(system_id, component_id, &msg,target_system, target_component, command, confirmation, param1, param2, param3, param4);
 
 }
 
@@ -3619,7 +3619,143 @@ void pack_msg_command_ack(JNIEnv *env, jclass& classType, jobject& obj, mavlink_
 	float result = (float)env->GetFloatField (obj, env->GetFieldID(command_ack_class, "result", "F"));
 
 
-	mavlink_msg_command_ack_pack(system_id, component_id, &msg, command, result);
+	mavlink_msg_command_ack_pack(system_id, component_id, &msg,command, result);
+
+}
+
+jobject unpack_msg_optical_flow(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_optical_flow_t inp;
+	mavlink_msg_optical_flow_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(optical_flow_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(optical_flow_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(optical_flow_class, "time", "J");
+	env->SetLongField (result, fid, (long) inp.time);
+
+	fid = env->GetFieldID(optical_flow_class, "sensor_id", "I");
+	env->SetIntField (result, fid, (int) inp.sensor_id);
+
+	fid = env->GetFieldID(optical_flow_class, "flow_x", "I");
+	env->SetIntField (result, fid, (int) inp.flow_x);
+
+	fid = env->GetFieldID(optical_flow_class, "flow_y", "I");
+	env->SetIntField (result, fid, (int) inp.flow_y);
+
+	fid = env->GetFieldID(optical_flow_class, "quality", "I");
+	env->SetIntField (result, fid, (int) inp.quality);
+
+	fid = env->GetFieldID(optical_flow_class, "ground_distance", "F");
+	env->SetFloatField (result, fid, (float)inp.ground_distance);
+
+	
+	fid = env->GetFieldID(optical_flow_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(optical_flow_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_optical_flow(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint64_t time = (uint64_t)env->GetLongField (obj, env->GetFieldID(optical_flow_class, "time", "J"));
+	uint8_t sensor_id = (uint8_t)env->GetIntField (obj, env->GetFieldID(optical_flow_class, "sensor_id", "I"));
+	int16_t flow_x = (int16_t)env->GetIntField (obj, env->GetFieldID(optical_flow_class, "flow_x", "I"));
+	int16_t flow_y = (int16_t)env->GetIntField (obj, env->GetFieldID(optical_flow_class, "flow_y", "I"));
+	uint8_t quality = (uint8_t)env->GetIntField (obj, env->GetFieldID(optical_flow_class, "quality", "I"));
+	float ground_distance = (float)env->GetFloatField (obj, env->GetFieldID(optical_flow_class, "ground_distance", "F"));
+
+
+	mavlink_msg_optical_flow_pack(system_id, component_id, &msg,time, sensor_id, flow_x, flow_y, quality, ground_distance);
+
+}
+
+jobject unpack_msg_object_detection_event(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_object_detection_event_t inp;
+	mavlink_msg_object_detection_event_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(object_detection_event_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(object_detection_event_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(object_detection_event_class, "time", "J");
+	env->SetLongField (result, fid, (long) inp.time);
+
+	fid = env->GetFieldID(object_detection_event_class, "object_id", "I");
+	env->SetIntField (result, fid, (int) inp.object_id);
+
+	fid = env->GetFieldID(object_detection_event_class, "type", "I");
+	env->SetIntField (result, fid, (int) inp.type);
+
+	{
+		fid = env->GetFieldID(object_detection_event_class, "name", "[C");
+		jcharArray charArr = (jcharArray) env->GetObjectField(result, fid);
+		jchar* data = env->GetCharArrayElements(charArr, NULL);
+		for(int i = 0; i < 20; i++)
+			data[i] = inp.name[i];
+
+		// Don't forget to release it
+		env->ReleaseCharArrayElements(charArr, data, 0);
+	}
+	fid = env->GetFieldID(object_detection_event_class, "quality", "I");
+	env->SetIntField (result, fid, (int) inp.quality);
+
+	fid = env->GetFieldID(object_detection_event_class, "bearing", "F");
+	env->SetFloatField (result, fid, (float)inp.bearing);
+
+	fid = env->GetFieldID(object_detection_event_class, "distance", "F");
+	env->SetFloatField (result, fid, (float)inp.distance);
+
+	
+	fid = env->GetFieldID(object_detection_event_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(object_detection_event_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_object_detection_event(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint32_t time = (uint32_t)env->GetLongField (obj, env->GetFieldID(object_detection_event_class, "time", "J"));
+	uint16_t object_id = (uint16_t)env->GetIntField (obj, env->GetFieldID(object_detection_event_class, "object_id", "I"));
+	uint8_t type = (uint8_t)env->GetIntField (obj, env->GetFieldID(object_detection_event_class, "type", "I"));
+	char name[20];
+	{
+	jfieldID fid;
+		fid = env->GetFieldID(object_detection_event_class, "name", "[C");
+		jcharArray charArr = (jcharArray) env->GetObjectField(obj, fid);
+		jchar* data = env->GetCharArrayElements(charArr, NULL);
+		for(int i = 0; i < 20; i++)
+			name[i] = data[i];
+
+		// Don't forget to release it
+		env->ReleaseCharArrayElements(charArr, data, 0);
+	}
+	uint8_t quality = (uint8_t)env->GetIntField (obj, env->GetFieldID(object_detection_event_class, "quality", "I"));
+	float bearing = (float)env->GetFloatField (obj, env->GetFieldID(object_detection_event_class, "bearing", "F"));
+	float distance = (float)env->GetFloatField (obj, env->GetFieldID(object_detection_event_class, "distance", "F"));
+
+
+	mavlink_msg_object_detection_event_pack(system_id, component_id, &msg,time, object_id, type, name, quality, bearing, distance);
 
 }
 
@@ -3690,7 +3826,7 @@ void pack_msg_debug_vect(JNIEnv *env, jclass& classType, jobject& obj, mavlink_m
 	float z = (float)env->GetFloatField (obj, env->GetFieldID(debug_vect_class, "z", "F"));
 
 
-	mavlink_msg_debug_vect_pack(system_id, component_id, &msg, name, usec, x, y, z);
+	mavlink_msg_debug_vect_pack(system_id, component_id, &msg,name, usec, x, y, z);
 
 }
 
@@ -3749,7 +3885,7 @@ void pack_msg_named_value_float(JNIEnv *env, jclass& classType, jobject& obj, ma
 	float value = (float)env->GetFloatField (obj, env->GetFieldID(named_value_float_class, "value", "F"));
 
 
-	mavlink_msg_named_value_float_pack(system_id, component_id, &msg, name, value);
+	mavlink_msg_named_value_float_pack(system_id, component_id, &msg,name, value);
 
 }
 
@@ -3808,7 +3944,7 @@ void pack_msg_named_value_int(JNIEnv *env, jclass& classType, jobject& obj, mavl
 	int32_t value = (int32_t)env->GetLongField (obj, env->GetFieldID(named_value_int_class, "value", "J"));
 
 
-	mavlink_msg_named_value_int_pack(system_id, component_id, &msg, name, value);
+	mavlink_msg_named_value_int_pack(system_id, component_id, &msg,name, value);
 
 }
 
@@ -3869,7 +4005,7 @@ int8_t text[50];
 	}
 
 
-	mavlink_msg_statustext_pack(system_id, component_id, &msg, severity, text);
+	mavlink_msg_statustext_pack(system_id, component_id, &msg,severity, text);
 
 }
 
@@ -3910,7 +4046,556 @@ void pack_msg_debug(JNIEnv *env, jclass& classType, jobject& obj, mavlink_messag
 	float value = (float)env->GetFloatField (obj, env->GetFieldID(debug_class, "value", "F"));
 
 
-	mavlink_msg_debug_pack(system_id, component_id, &msg, ind, value);
+	mavlink_msg_debug_pack(system_id, component_id, &msg,ind, value);
+
+}
+
+jobject unpack_msg_sensor_offsets(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_sensor_offsets_t inp;
+	mavlink_msg_sensor_offsets_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(sensor_offsets_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(sensor_offsets_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(sensor_offsets_class, "mag_ofs_x", "I");
+	env->SetIntField (result, fid, (int) inp.mag_ofs_x);
+
+	fid = env->GetFieldID(sensor_offsets_class, "mag_ofs_y", "I");
+	env->SetIntField (result, fid, (int) inp.mag_ofs_y);
+
+	fid = env->GetFieldID(sensor_offsets_class, "mag_ofs_z", "I");
+	env->SetIntField (result, fid, (int) inp.mag_ofs_z);
+
+	fid = env->GetFieldID(sensor_offsets_class, "mag_declination", "F");
+	env->SetFloatField (result, fid, (float)inp.mag_declination);
+
+	fid = env->GetFieldID(sensor_offsets_class, "raw_press", "J");
+	env->SetLongField (result, fid, (long) inp.raw_press);
+
+	fid = env->GetFieldID(sensor_offsets_class, "raw_temp", "J");
+	env->SetLongField (result, fid, (long) inp.raw_temp);
+
+	fid = env->GetFieldID(sensor_offsets_class, "gyro_cal_x", "F");
+	env->SetFloatField (result, fid, (float)inp.gyro_cal_x);
+
+	fid = env->GetFieldID(sensor_offsets_class, "gyro_cal_y", "F");
+	env->SetFloatField (result, fid, (float)inp.gyro_cal_y);
+
+	fid = env->GetFieldID(sensor_offsets_class, "gyro_cal_z", "F");
+	env->SetFloatField (result, fid, (float)inp.gyro_cal_z);
+
+	fid = env->GetFieldID(sensor_offsets_class, "accel_cal_x", "F");
+	env->SetFloatField (result, fid, (float)inp.accel_cal_x);
+
+	fid = env->GetFieldID(sensor_offsets_class, "accel_cal_y", "F");
+	env->SetFloatField (result, fid, (float)inp.accel_cal_y);
+
+	fid = env->GetFieldID(sensor_offsets_class, "accel_cal_z", "F");
+	env->SetFloatField (result, fid, (float)inp.accel_cal_z);
+
+	
+	fid = env->GetFieldID(sensor_offsets_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(sensor_offsets_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_sensor_offsets(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	int16_t mag_ofs_x = (int16_t)env->GetIntField (obj, env->GetFieldID(sensor_offsets_class, "mag_ofs_x", "I"));
+	int16_t mag_ofs_y = (int16_t)env->GetIntField (obj, env->GetFieldID(sensor_offsets_class, "mag_ofs_y", "I"));
+	int16_t mag_ofs_z = (int16_t)env->GetIntField (obj, env->GetFieldID(sensor_offsets_class, "mag_ofs_z", "I"));
+	float mag_declination = (float)env->GetFloatField (obj, env->GetFieldID(sensor_offsets_class, "mag_declination", "F"));
+	int32_t raw_press = (int32_t)env->GetLongField (obj, env->GetFieldID(sensor_offsets_class, "raw_press", "J"));
+	int32_t raw_temp = (int32_t)env->GetLongField (obj, env->GetFieldID(sensor_offsets_class, "raw_temp", "J"));
+	float gyro_cal_x = (float)env->GetFloatField (obj, env->GetFieldID(sensor_offsets_class, "gyro_cal_x", "F"));
+	float gyro_cal_y = (float)env->GetFloatField (obj, env->GetFieldID(sensor_offsets_class, "gyro_cal_y", "F"));
+	float gyro_cal_z = (float)env->GetFloatField (obj, env->GetFieldID(sensor_offsets_class, "gyro_cal_z", "F"));
+	float accel_cal_x = (float)env->GetFloatField (obj, env->GetFieldID(sensor_offsets_class, "accel_cal_x", "F"));
+	float accel_cal_y = (float)env->GetFloatField (obj, env->GetFieldID(sensor_offsets_class, "accel_cal_y", "F"));
+	float accel_cal_z = (float)env->GetFloatField (obj, env->GetFieldID(sensor_offsets_class, "accel_cal_z", "F"));
+
+
+	mavlink_msg_sensor_offsets_pack(system_id, component_id, &msg,mag_ofs_x, mag_ofs_y, mag_ofs_z, mag_declination, raw_press, raw_temp, gyro_cal_x, gyro_cal_y, gyro_cal_z, accel_cal_x, accel_cal_y, accel_cal_z);
+
+}
+
+jobject unpack_msg_set_mag_offsets(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_set_mag_offsets_t inp;
+	mavlink_msg_set_mag_offsets_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(set_mag_offsets_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(set_mag_offsets_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(set_mag_offsets_class, "target_system", "I");
+	env->SetIntField (result, fid, (int) inp.target_system);
+
+	fid = env->GetFieldID(set_mag_offsets_class, "target_component", "I");
+	env->SetIntField (result, fid, (int) inp.target_component);
+
+	fid = env->GetFieldID(set_mag_offsets_class, "mag_ofs_x", "I");
+	env->SetIntField (result, fid, (int) inp.mag_ofs_x);
+
+	fid = env->GetFieldID(set_mag_offsets_class, "mag_ofs_y", "I");
+	env->SetIntField (result, fid, (int) inp.mag_ofs_y);
+
+	fid = env->GetFieldID(set_mag_offsets_class, "mag_ofs_z", "I");
+	env->SetIntField (result, fid, (int) inp.mag_ofs_z);
+
+	
+	fid = env->GetFieldID(set_mag_offsets_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(set_mag_offsets_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_set_mag_offsets(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint8_t target_system = (uint8_t)env->GetIntField (obj, env->GetFieldID(set_mag_offsets_class, "target_system", "I"));
+	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(set_mag_offsets_class, "target_component", "I"));
+	int16_t mag_ofs_x = (int16_t)env->GetIntField (obj, env->GetFieldID(set_mag_offsets_class, "mag_ofs_x", "I"));
+	int16_t mag_ofs_y = (int16_t)env->GetIntField (obj, env->GetFieldID(set_mag_offsets_class, "mag_ofs_y", "I"));
+	int16_t mag_ofs_z = (int16_t)env->GetIntField (obj, env->GetFieldID(set_mag_offsets_class, "mag_ofs_z", "I"));
+
+
+	mavlink_msg_set_mag_offsets_pack(system_id, component_id, &msg,target_system, target_component, mag_ofs_x, mag_ofs_y, mag_ofs_z);
+
+}
+
+jobject unpack_msg_meminfo(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_meminfo_t inp;
+	mavlink_msg_meminfo_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(meminfo_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(meminfo_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(meminfo_class, "brkval", "I");
+	env->SetIntField (result, fid, (int) inp.brkval);
+
+	fid = env->GetFieldID(meminfo_class, "freemem", "I");
+	env->SetIntField (result, fid, (int) inp.freemem);
+
+	
+	fid = env->GetFieldID(meminfo_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(meminfo_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_meminfo(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint16_t brkval = (uint16_t)env->GetIntField (obj, env->GetFieldID(meminfo_class, "brkval", "I"));
+	uint16_t freemem = (uint16_t)env->GetIntField (obj, env->GetFieldID(meminfo_class, "freemem", "I"));
+
+
+	mavlink_msg_meminfo_pack(system_id, component_id, &msg,brkval, freemem);
+
+}
+
+jobject unpack_msg_ap_adc(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_ap_adc_t inp;
+	mavlink_msg_ap_adc_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(ap_adc_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(ap_adc_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(ap_adc_class, "adc1", "I");
+	env->SetIntField (result, fid, (int) inp.adc1);
+
+	fid = env->GetFieldID(ap_adc_class, "adc2", "I");
+	env->SetIntField (result, fid, (int) inp.adc2);
+
+	fid = env->GetFieldID(ap_adc_class, "adc3", "I");
+	env->SetIntField (result, fid, (int) inp.adc3);
+
+	fid = env->GetFieldID(ap_adc_class, "adc4", "I");
+	env->SetIntField (result, fid, (int) inp.adc4);
+
+	fid = env->GetFieldID(ap_adc_class, "adc5", "I");
+	env->SetIntField (result, fid, (int) inp.adc5);
+
+	fid = env->GetFieldID(ap_adc_class, "adc6", "I");
+	env->SetIntField (result, fid, (int) inp.adc6);
+
+	
+	fid = env->GetFieldID(ap_adc_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(ap_adc_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_ap_adc(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint16_t adc1 = (uint16_t)env->GetIntField (obj, env->GetFieldID(ap_adc_class, "adc1", "I"));
+	uint16_t adc2 = (uint16_t)env->GetIntField (obj, env->GetFieldID(ap_adc_class, "adc2", "I"));
+	uint16_t adc3 = (uint16_t)env->GetIntField (obj, env->GetFieldID(ap_adc_class, "adc3", "I"));
+	uint16_t adc4 = (uint16_t)env->GetIntField (obj, env->GetFieldID(ap_adc_class, "adc4", "I"));
+	uint16_t adc5 = (uint16_t)env->GetIntField (obj, env->GetFieldID(ap_adc_class, "adc5", "I"));
+	uint16_t adc6 = (uint16_t)env->GetIntField (obj, env->GetFieldID(ap_adc_class, "adc6", "I"));
+
+
+	mavlink_msg_ap_adc_pack(system_id, component_id, &msg,adc1, adc2, adc3, adc4, adc5, adc6);
+
+}
+
+jobject unpack_msg_digicam_configure(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_digicam_configure_t inp;
+	mavlink_msg_digicam_configure_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(digicam_configure_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(digicam_configure_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(digicam_configure_class, "target_system", "I");
+	env->SetIntField (result, fid, (int) inp.target_system);
+
+	fid = env->GetFieldID(digicam_configure_class, "target_component", "I");
+	env->SetIntField (result, fid, (int) inp.target_component);
+
+	fid = env->GetFieldID(digicam_configure_class, "mode", "I");
+	env->SetIntField (result, fid, (int) inp.mode);
+
+	fid = env->GetFieldID(digicam_configure_class, "shutter_speed", "I");
+	env->SetIntField (result, fid, (int) inp.shutter_speed);
+
+	fid = env->GetFieldID(digicam_configure_class, "aperture", "I");
+	env->SetIntField (result, fid, (int) inp.aperture);
+
+	fid = env->GetFieldID(digicam_configure_class, "iso", "I");
+	env->SetIntField (result, fid, (int) inp.iso);
+
+	fid = env->GetFieldID(digicam_configure_class, "exposure_type", "I");
+	env->SetIntField (result, fid, (int) inp.exposure_type);
+
+	fid = env->GetFieldID(digicam_configure_class, "command_id", "I");
+	env->SetIntField (result, fid, (int) inp.command_id);
+
+	fid = env->GetFieldID(digicam_configure_class, "engine_cut_off", "I");
+	env->SetIntField (result, fid, (int) inp.engine_cut_off);
+
+	fid = env->GetFieldID(digicam_configure_class, "extra_param", "I");
+	env->SetIntField (result, fid, (int) inp.extra_param);
+
+	fid = env->GetFieldID(digicam_configure_class, "extra_value", "F");
+	env->SetFloatField (result, fid, (float)inp.extra_value);
+
+	
+	fid = env->GetFieldID(digicam_configure_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(digicam_configure_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_digicam_configure(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint8_t target_system = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "target_system", "I"));
+	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "target_component", "I"));
+	uint8_t mode = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "mode", "I"));
+	uint16_t shutter_speed = (uint16_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "shutter_speed", "I"));
+	uint8_t aperture = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "aperture", "I"));
+	uint8_t iso = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "iso", "I"));
+	uint8_t exposure_type = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "exposure_type", "I"));
+	uint8_t command_id = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "command_id", "I"));
+	uint8_t engine_cut_off = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "engine_cut_off", "I"));
+	uint8_t extra_param = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_configure_class, "extra_param", "I"));
+	float extra_value = (float)env->GetFloatField (obj, env->GetFieldID(digicam_configure_class, "extra_value", "F"));
+
+
+	mavlink_msg_digicam_configure_pack(system_id, component_id, &msg,target_system, target_component, mode, shutter_speed, aperture, iso, exposure_type, command_id, engine_cut_off, extra_param, extra_value);
+
+}
+
+jobject unpack_msg_digicam_control(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_digicam_control_t inp;
+	mavlink_msg_digicam_control_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(digicam_control_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(digicam_control_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(digicam_control_class, "target_system", "I");
+	env->SetIntField (result, fid, (int) inp.target_system);
+
+	fid = env->GetFieldID(digicam_control_class, "target_component", "I");
+	env->SetIntField (result, fid, (int) inp.target_component);
+
+	fid = env->GetFieldID(digicam_control_class, "session", "I");
+	env->SetIntField (result, fid, (int) inp.session);
+
+	fid = env->GetFieldID(digicam_control_class, "zoom_pos", "I");
+	env->SetIntField (result, fid, (int) inp.zoom_pos);
+
+	fid = env->GetFieldID(digicam_control_class, "zoom_step", "I");
+	env->SetIntField (result, fid, (int) inp.zoom_step);
+
+	fid = env->GetFieldID(digicam_control_class, "focus_lock", "I");
+	env->SetIntField (result, fid, (int) inp.focus_lock);
+
+	fid = env->GetFieldID(digicam_control_class, "shot", "I");
+	env->SetIntField (result, fid, (int) inp.shot);
+
+	fid = env->GetFieldID(digicam_control_class, "command_id", "I");
+	env->SetIntField (result, fid, (int) inp.command_id);
+
+	fid = env->GetFieldID(digicam_control_class, "extra_param", "I");
+	env->SetIntField (result, fid, (int) inp.extra_param);
+
+	fid = env->GetFieldID(digicam_control_class, "extra_value", "F");
+	env->SetFloatField (result, fid, (float)inp.extra_value);
+
+	
+	fid = env->GetFieldID(digicam_control_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(digicam_control_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_digicam_control(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint8_t target_system = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "target_system", "I"));
+	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "target_component", "I"));
+	uint8_t session = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "session", "I"));
+	uint8_t zoom_pos = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "zoom_pos", "I"));
+	int8_t zoom_step = (int8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "zoom_step", "I"));
+	uint8_t focus_lock = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "focus_lock", "I"));
+	uint8_t shot = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "shot", "I"));
+	uint8_t command_id = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "command_id", "I"));
+	uint8_t extra_param = (uint8_t)env->GetIntField (obj, env->GetFieldID(digicam_control_class, "extra_param", "I"));
+	float extra_value = (float)env->GetFloatField (obj, env->GetFieldID(digicam_control_class, "extra_value", "F"));
+
+
+	mavlink_msg_digicam_control_pack(system_id, component_id, &msg,target_system, target_component, session, zoom_pos, zoom_step, focus_lock, shot, command_id, extra_param, extra_value);
+
+}
+
+jobject unpack_msg_mount_configure(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_mount_configure_t inp;
+	mavlink_msg_mount_configure_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(mount_configure_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(mount_configure_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(mount_configure_class, "target_system", "I");
+	env->SetIntField (result, fid, (int) inp.target_system);
+
+	fid = env->GetFieldID(mount_configure_class, "target_component", "I");
+	env->SetIntField (result, fid, (int) inp.target_component);
+
+	fid = env->GetFieldID(mount_configure_class, "mount_mode", "I");
+	env->SetIntField (result, fid, (int) inp.mount_mode);
+
+	fid = env->GetFieldID(mount_configure_class, "stab_roll", "I");
+	env->SetIntField (result, fid, (int) inp.stab_roll);
+
+	fid = env->GetFieldID(mount_configure_class, "stab_pitch", "I");
+	env->SetIntField (result, fid, (int) inp.stab_pitch);
+
+	fid = env->GetFieldID(mount_configure_class, "stab_yaw", "I");
+	env->SetIntField (result, fid, (int) inp.stab_yaw);
+
+	
+	fid = env->GetFieldID(mount_configure_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(mount_configure_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_mount_configure(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint8_t target_system = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_configure_class, "target_system", "I"));
+	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_configure_class, "target_component", "I"));
+	uint8_t mount_mode = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_configure_class, "mount_mode", "I"));
+	uint8_t stab_roll = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_configure_class, "stab_roll", "I"));
+	uint8_t stab_pitch = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_configure_class, "stab_pitch", "I"));
+	uint8_t stab_yaw = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_configure_class, "stab_yaw", "I"));
+
+
+	mavlink_msg_mount_configure_pack(system_id, component_id, &msg,target_system, target_component, mount_mode, stab_roll, stab_pitch, stab_yaw);
+
+}
+
+jobject unpack_msg_mount_control(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_mount_control_t inp;
+	mavlink_msg_mount_control_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(mount_control_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(mount_control_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(mount_control_class, "target_system", "I");
+	env->SetIntField (result, fid, (int) inp.target_system);
+
+	fid = env->GetFieldID(mount_control_class, "target_component", "I");
+	env->SetIntField (result, fid, (int) inp.target_component);
+
+	fid = env->GetFieldID(mount_control_class, "input_a", "J");
+	env->SetLongField (result, fid, (long) inp.input_a);
+
+	fid = env->GetFieldID(mount_control_class, "input_b", "J");
+	env->SetLongField (result, fid, (long) inp.input_b);
+
+	fid = env->GetFieldID(mount_control_class, "input_c", "J");
+	env->SetLongField (result, fid, (long) inp.input_c);
+
+	fid = env->GetFieldID(mount_control_class, "save_position", "I");
+	env->SetIntField (result, fid, (int) inp.save_position);
+
+	
+	fid = env->GetFieldID(mount_control_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(mount_control_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_mount_control(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint8_t target_system = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_control_class, "target_system", "I"));
+	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_control_class, "target_component", "I"));
+	int32_t input_a = (int32_t)env->GetLongField (obj, env->GetFieldID(mount_control_class, "input_a", "J"));
+	int32_t input_b = (int32_t)env->GetLongField (obj, env->GetFieldID(mount_control_class, "input_b", "J"));
+	int32_t input_c = (int32_t)env->GetLongField (obj, env->GetFieldID(mount_control_class, "input_c", "J"));
+	uint8_t save_position = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_control_class, "save_position", "I"));
+
+
+	mavlink_msg_mount_control_pack(system_id, component_id, &msg,target_system, target_component, input_a, input_b, input_c, save_position);
+
+}
+
+jobject unpack_msg_mount_status(JNIEnv *env, mavlink_message_t& message){
+	
+	jclass newMessage;
+	mavlink_mount_status_t inp;
+	mavlink_msg_mount_status_decode(&message, &inp);
+	
+	// Create the object
+	jmethodID cid = env->GetMethodID(mount_status_class, "<init>", "()V");
+	if (cid == NULL) return NULL; /* exception thrown */
+	jobject result = env->NewObject(mount_status_class, cid);
+	
+	
+	//Set values
+	jfieldID fid;
+	fid = env->GetFieldID(mount_status_class, "target_system", "I");
+	env->SetIntField (result, fid, (int) inp.target_system);
+
+	fid = env->GetFieldID(mount_status_class, "target_component", "I");
+	env->SetIntField (result, fid, (int) inp.target_component);
+
+	fid = env->GetFieldID(mount_status_class, "pointing_a", "J");
+	env->SetLongField (result, fid, (long) inp.pointing_a);
+
+	fid = env->GetFieldID(mount_status_class, "pointing_b", "J");
+	env->SetLongField (result, fid, (long) inp.pointing_b);
+
+	fid = env->GetFieldID(mount_status_class, "pointing_c", "J");
+	env->SetLongField (result, fid, (long) inp.pointing_c);
+
+	
+	fid = env->GetFieldID(mount_status_class, "sysID", "I");
+	env->SetIntField (result, fid, (int) message.sysid);
+	fid = env->GetFieldID(mount_status_class, "componentID", "I");
+	env->SetIntField (result, fid, (int) message.compid);
+	/* Free local references */
+	//env->DeleteLocalRef(heartbeatClass);
+	
+	return result;
+	
+}
+
+void pack_msg_mount_status(JNIEnv *env, jclass& classType, jobject& obj, mavlink_message_t& msg){
+	uint8_t target_system = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_status_class, "target_system", "I"));
+	uint8_t target_component = (uint8_t)env->GetIntField (obj, env->GetFieldID(mount_status_class, "target_component", "I"));
+	int32_t pointing_a = (int32_t)env->GetLongField (obj, env->GetFieldID(mount_status_class, "pointing_a", "J"));
+	int32_t pointing_b = (int32_t)env->GetLongField (obj, env->GetFieldID(mount_status_class, "pointing_b", "J"));
+	int32_t pointing_c = (int32_t)env->GetLongField (obj, env->GetFieldID(mount_status_class, "pointing_c", "J"));
+
+
+	mavlink_msg_mount_status_pack(system_id, component_id, &msg,target_system, target_component, pointing_a, pointing_b, pointing_c);
 
 }
 

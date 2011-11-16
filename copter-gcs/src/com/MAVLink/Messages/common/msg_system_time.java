@@ -10,6 +10,6 @@ public class msg_system_time extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_SYSTEM_TIME;
 
-	public 	long time_usec; ///< Timestamp of the master clock in microseconds since UNIX epoch.
+	public long time_usec; ///< Timestamp of the master clock in microseconds since UNIX epoch.
 
 }

@@ -11,6 +11,6 @@ public class msg_named_value_float extends IMAVLinkMessage{
 	private static final long serialVersionUID = MAVLINK_MSG_ID_NAMED_VALUE_FLOAT;
 
 	public 	char[] name = new char[10];///< Name of the debug variable
-	public 	float value; ///< Floating point value
+	public float value; ///< Floating point value
 
 }
