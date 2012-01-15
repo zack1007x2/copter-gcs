@@ -308,7 +308,10 @@ public class SetupPIDSActivity extends Activity implements OnClickListener {
 				if(!pid.containsEntry(name))
 					pid.addEntry(value, name);
 				
-				pid.set(name, param_value, isConfirm);
+				//if( value.equals("IMAX"))
+				//	pid.set(name, param_value/100.0f, isConfirm);
+				//else
+					pid.set(name, param_value, isConfirm);
 				
 				setButtonNames(false);
 					

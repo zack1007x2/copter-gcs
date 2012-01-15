@@ -77,7 +77,9 @@ public class SetupHardwareActivity extends Activity implements OnClickListener{
 				setValue("SONAR_ENABLE", enable_sonar.isChecked()? 1 : 0);
 			
 			if(declination.isEnabled())
-				setValue("COMPASS_DEC", Float.parseFloat(declination.getText().toString()));
+				// value is shown in degrees, send as RAD
+				setValue("COMPASS_DEC", Float.parseFloat(declination.getText().toString()) /180.0f * (float)Math.PI);
+			
 			if(enable_compass.isEnabled())
 				setValue("MAG_ENABLE", enable_compass.isChecked()? 1 : 0);
 			
@@ -164,7 +166,10 @@ public class SetupHardwareActivity extends Activity implements OnClickListener{
 						}
 	
 						if( name.equals("COMPASS_DEC")){
-							declination.setText(msg.param_value+"");
+							float val = msg.param_value;
+							// Convert radians to degrees for display.
+							val = val / (float)Math.PI * 180.0f;
+							declination.setText(val+"");
 							declination.setEnabled(true);
 						
 						}

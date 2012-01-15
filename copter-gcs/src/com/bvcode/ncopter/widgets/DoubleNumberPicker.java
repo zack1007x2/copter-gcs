@@ -19,8 +19,7 @@ public class DoubleNumberPicker extends TableRow implements OnClickListener{
     private TextView label;
     private EditText lP;
     private Button minS, minL, plusS, plusL;
-    private float value;
-    
+   
 	public DoubleNumberPicker(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	 
@@ -50,7 +49,16 @@ public class DoubleNumberPicker extends TableRow implements OnClickListener{
 	}
 	
 	public float getValue() {
-		return value;
+		String val = lP.getText().toString();
+		
+		try {
+			return Float.valueOf(val);
+			
+		} catch (NumberFormatException e) {
+			
+		}
+		
+		return Float.NaN;
 		
 	}
 	
@@ -65,7 +73,7 @@ public class DoubleNumberPicker extends TableRow implements OnClickListener{
 	public void setValue(float param_value, boolean isConfirm) {
 		param_value = Math.round((float)(param_value * 10000)) / 10000.0f;
 		    
-		value = param_value;
+		//value = param_value;
 		lP.setText(param_value + "");
 		if(isConfirm){
 			lP.setBackgroundColor( Color.GREEN );
@@ -78,6 +86,7 @@ public class DoubleNumberPicker extends TableRow implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
+		float value = getValue();
 		if( v == minS){
 			value -= 0.01;
 		}else if( v == minL){

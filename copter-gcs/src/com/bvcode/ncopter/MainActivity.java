@@ -94,6 +94,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	    		selectLink();
 	    		return true;
 	    		
+	    	/*case R.id.menuRC:
+	    		startActivity(new Intent(this, RemoteControl.class));
+				return true;*/
+	    		
 	    	case R.id.lockOrientation:
 	    		selectOrientation();
 	    		return true;
