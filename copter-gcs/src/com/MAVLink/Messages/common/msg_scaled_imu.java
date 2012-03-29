@@ -10,7 +10,7 @@ public class msg_scaled_imu extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_SCALED_IMU;
 
-	public long usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+	public long time_boot_ms; ///< Timestamp (milliseconds since system boot)
 	public int xacc; ///< X acceleration (mg)
 	public int yacc; ///< Y acceleration (mg)
 	public int zacc; ///< Z acceleration (mg)

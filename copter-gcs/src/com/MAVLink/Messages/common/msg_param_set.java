@@ -10,9 +10,10 @@ public class msg_param_set extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_PARAM_SET;
 
+	public float param_value; ///< Onboard parameter value
 	public int target_system; ///< System ID
 	public int target_component; ///< Component ID
-	public 	int[] param_id = new int[15];///< Onboard parameter id
-	public float param_value; ///< Onboard parameter value
+	public 	char[] param_id = new char[16];///< Onboard parameter id
+	public int param_type; ///< Onboard parameter type: see MAV_VAR enum
 
 }

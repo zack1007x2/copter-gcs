@@ -96,7 +96,7 @@ public class SetupHardwareActivity extends Activity implements OnClickListener{
 	
 	private void setValue(String valueName, float val){
 
-		int[] name = MAVLink.StringNameToInt(valueName);
+		char[] name = MAVLink.StringNameToInt(valueName);
 		
 		msg_param_set set = new msg_param_set();
 		set.target_system = MAVLink.CURRENT_SYSID;

@@ -303,8 +303,8 @@ public class MainActivity extends Activity implements OnClickListener {
 				connectLabel.setText("Link Activated");
 			
 				msg_heartbeat msg = new msg_heartbeat();
-				msg.type = MAVLink.MAV_TYPE.OCU;
-				msg.autopilot = MAVLink.MAV_AUTOPILOT_TYPE.MAV_AUTOPILOT_GENERIC;
+				msg.type = MAVLink.MAV_TYPE.MAV_TYPE_GCS;
+				msg.autopilot = MAVLink.MAV_AUTOPILOT.MAV_AUTOPILOT_GENERIC;
 				sendBytesToComm(MAVLink.createMessage(msg));
 			
 			}else{

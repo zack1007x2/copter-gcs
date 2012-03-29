@@ -6,11 +6,11 @@ public class msg_hil_state extends IMAVLinkMessage{
 
 	public msg_hil_state(){ messageType = MAVLINK_MSG_ID_HIL_STATE; }
 
-	public static final int MAVLINK_MSG_ID_HIL_STATE = 67;
+	public static final int MAVLINK_MSG_ID_HIL_STATE = 90;
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_HIL_STATE;
 
-	public long usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+	public long time_usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
 	public float roll; ///< Roll angle (rad)
 	public float pitch; ///< Pitch angle (rad)
 	public float yaw; ///< Yaw angle (rad)

@@ -6,11 +6,11 @@ public class msg_raw_imu extends IMAVLinkMessage{
 
 	public msg_raw_imu(){ messageType = MAVLINK_MSG_ID_RAW_IMU; }
 
-	public static final int MAVLINK_MSG_ID_RAW_IMU = 28;
+	public static final int MAVLINK_MSG_ID_RAW_IMU = 27;
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_RAW_IMU;
 
-	public long usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+	public long time_usec; ///< Timestamp (microseconds since UNIX epoch or microseconds since system boot)
 	public int xacc; ///< X acceleration (raw)
 	public int yacc; ///< Y acceleration (raw)
 	public int zacc; ///< Z acceleration (raw)

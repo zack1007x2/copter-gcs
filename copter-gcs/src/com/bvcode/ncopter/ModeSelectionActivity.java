@@ -173,7 +173,7 @@ public class ModeSelectionActivity extends Activity{
 			
 			String valueName = "FLTMODE"+(myNum+1);
 			
-			int[] name = MAVLink.StringNameToInt(valueName); 
+			char[] name = MAVLink.StringNameToInt(valueName); 
 			
 			msg_param_set set = new msg_param_set();
 			set.target_system = MAVLink.CURRENT_SYSID;

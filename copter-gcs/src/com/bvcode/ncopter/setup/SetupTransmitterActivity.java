@@ -63,7 +63,7 @@ public class SetupTransmitterActivity extends Activity{
 	
 	byte[] saveParameter(String valueName, double value){
 		
-		int[] name = MAVLink.StringNameToInt(valueName);
+		char[] name = MAVLink.StringNameToInt(valueName);
 		msg_param_set set = new msg_param_set();
 		set.target_system = MAVLink.CURRENT_SYSID;
 		set.target_component = 0;

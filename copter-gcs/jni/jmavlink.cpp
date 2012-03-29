@@ -1,6 +1,6 @@
-#include "include/ardupilotmega/version.h"
-#include "include/mavlink_types.h"
-#include "include/ardupilotmega/mavlink.h"
+#include "include_v1.0/ardupilotmega/version.h"
+#include "include_v1.0/mavlink_types.h"
+#include "include_v1.0/ardupilotmega/mavlink.h"
 
 #include <string.h>
 #include <jni.h>

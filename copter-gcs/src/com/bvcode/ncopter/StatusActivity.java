@@ -128,14 +128,14 @@ public class StatusActivity extends Activity implements OnLongClickListener{
 					case msg_sys_status.MAVLINK_MSG_ID_SYS_STATUS:{
 						msg_sys_status msg = (msg_sys_status) m;
 						
-						updateStatusLine(0, "NAV Mode: " + MAVLink.getNav(msg.nav_mode));
-						updateStatusLine(1, "Status: " + MAVLink.getState(msg.status));
-						if( msg.mode < 100)
-							updateStatusLine(2, "Mode: " + MAVLink.getMode(msg.mode));
-						else
-							updateStatusLine(2, "Mode: " + getAC2Mode(msg.mode));
+						//TODO		updateStatusLine(0, "NAV Mode: " + MAVLink.getNav(msg.nav_mode));
+						//updateStatusLine(1, "Status: " + MAVLink.getState(msg.status));
+						//if( msg.mode < 100)
+						//	updateStatusLine(2, "Mode: " + MAVLink.getMode(msg.mode));
+						//else
+						//	updateStatusLine(2, "Mode: " + getAC2Mode(msg.mode));
 
-						updateStatusLine(9, "Packet Drops: " + (float)(msg.packet_drop)/1000.0);
+						updateStatusLine(9, "Packet Drops: " + (float)(msg.drop_rate_comm)/1000.0);
 						break;
 						
 					}	

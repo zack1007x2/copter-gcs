@@ -118,8 +118,8 @@ public class HUDActivity extends Activity{
 					case msg_sys_status.MAVLINK_MSG_ID_SYS_STATUS:{
 						msg_sys_status msg = (msg_sys_status) m;
 						hud.setBatteryRemaining(msg.battery_remaining/10.0);
-						hud.setbatteryMVolt(msg.vbat);
-						hud.setNavMode(MAVLink.getNav(msg.nav_mode));
+						hud.setbatteryMVolt(msg.voltage_battery);
+		//TODO				hud.setNavMode(MAVLink.getNav(msg.nav_mode));
 //						updateStatusLine(0, "NAV Mode: " + MAVLink.getNav(msg.nav_mode));
 //						updateStatusLine(1, "Status: " + MAVLink.getState(msg.status));
 //						updateStatusLine(2, "Mode: " + MAVLink.getMode(msg.mode));

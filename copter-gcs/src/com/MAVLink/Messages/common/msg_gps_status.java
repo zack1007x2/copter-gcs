@@ -6,7 +6,7 @@ public class msg_gps_status extends IMAVLinkMessage{
 
 	public msg_gps_status(){ messageType = MAVLINK_MSG_ID_GPS_STATUS; }
 
-	public static final int MAVLINK_MSG_ID_GPS_STATUS = 27;
+	public static final int MAVLINK_MSG_ID_GPS_STATUS = 25;
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_GPS_STATUS;
 

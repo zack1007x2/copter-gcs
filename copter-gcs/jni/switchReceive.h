@@ -2,8 +2,8 @@
 		result = unpack_msg_heartbeat(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_BOOT:
-		result = unpack_msg_boot(env, message);	
+	case MAVLINK_MSG_ID_SYS_STATUS:
+		result = unpack_msg_sys_status(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_SYSTEM_TIME:
@@ -12,10 +12,6 @@
 
 	case MAVLINK_MSG_ID_PING:
 		result = unpack_msg_ping(env, message);	
-		break;
-
-	case MAVLINK_MSG_ID_SYSTEM_TIME_UTC:
-		result = unpack_msg_system_time_utc(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_CHANGE_OPERATOR_CONTROL:
@@ -30,20 +26,8 @@
 		result = unpack_msg_auth_key(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_ACTION_ACK:
-		result = unpack_msg_action_ack(env, message);	
-		break;
-
-	case MAVLINK_MSG_ID_ACTION:
-		result = unpack_msg_action(env, message);	
-		break;
-
 	case MAVLINK_MSG_ID_SET_MODE:
 		result = unpack_msg_set_mode(env, message);	
-		break;
-
-	case MAVLINK_MSG_ID_SET_NAV_MODE:
-		result = unpack_msg_set_nav_mode(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_PARAM_REQUEST_READ:
@@ -66,12 +50,12 @@
 		result = unpack_msg_gps_raw_int(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_SCALED_IMU:
-		result = unpack_msg_scaled_imu(env, message);	
-		break;
-
 	case MAVLINK_MSG_ID_GPS_STATUS:
 		result = unpack_msg_gps_status(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_SCALED_IMU:
+		result = unpack_msg_scaled_imu(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_RAW_IMU:
@@ -90,88 +74,96 @@
 		result = unpack_msg_attitude(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_LOCAL_POSITION:
-		result = unpack_msg_local_position(env, message);	
+	case MAVLINK_MSG_ID_ATTITUDE_QUATERNION:
+		result = unpack_msg_attitude_quaternion(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_GLOBAL_POSITION:
-		result = unpack_msg_global_position(env, message);	
+	case MAVLINK_MSG_ID_LOCAL_POSITION_NED:
+		result = unpack_msg_local_position_ned(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_GPS_RAW:
-		result = unpack_msg_gps_raw(env, message);	
-		break;
-
-	case MAVLINK_MSG_ID_SYS_STATUS:
-		result = unpack_msg_sys_status(env, message);	
-		break;
-
-	case MAVLINK_MSG_ID_RC_CHANNELS_RAW:
-		result = unpack_msg_rc_channels_raw(env, message);	
+	case MAVLINK_MSG_ID_GLOBAL_POSITION_INT:
+		result = unpack_msg_global_position_int(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_RC_CHANNELS_SCALED:
 		result = unpack_msg_rc_channels_scaled(env, message);	
 		break;
 
+	case MAVLINK_MSG_ID_RC_CHANNELS_RAW:
+		result = unpack_msg_rc_channels_raw(env, message);	
+		break;
+
 	case MAVLINK_MSG_ID_SERVO_OUTPUT_RAW:
 		result = unpack_msg_servo_output_raw(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT:
-		result = unpack_msg_waypoint(env, message);	
+	case MAVLINK_MSG_ID_MISSION_REQUEST_PARTIAL_LIST:
+		result = unpack_msg_mission_request_partial_list(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT_REQUEST:
-		result = unpack_msg_waypoint_request(env, message);	
+	case MAVLINK_MSG_ID_MISSION_WRITE_PARTIAL_LIST:
+		result = unpack_msg_mission_write_partial_list(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT_SET_CURRENT:
-		result = unpack_msg_waypoint_set_current(env, message);	
+	case MAVLINK_MSG_ID_MISSION_ITEM:
+		result = unpack_msg_mission_item(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT_CURRENT:
-		result = unpack_msg_waypoint_current(env, message);	
+	case MAVLINK_MSG_ID_MISSION_REQUEST:
+		result = unpack_msg_mission_request(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT_REQUEST_LIST:
-		result = unpack_msg_waypoint_request_list(env, message);	
+	case MAVLINK_MSG_ID_MISSION_SET_CURRENT:
+		result = unpack_msg_mission_set_current(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT_COUNT:
-		result = unpack_msg_waypoint_count(env, message);	
+	case MAVLINK_MSG_ID_MISSION_CURRENT:
+		result = unpack_msg_mission_current(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT_CLEAR_ALL:
-		result = unpack_msg_waypoint_clear_all(env, message);	
+	case MAVLINK_MSG_ID_MISSION_REQUEST_LIST:
+		result = unpack_msg_mission_request_list(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT_REACHED:
-		result = unpack_msg_waypoint_reached(env, message);	
+	case MAVLINK_MSG_ID_MISSION_COUNT:
+		result = unpack_msg_mission_count(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_WAYPOINT_ACK:
-		result = unpack_msg_waypoint_ack(env, message);	
+	case MAVLINK_MSG_ID_MISSION_CLEAR_ALL:
+		result = unpack_msg_mission_clear_all(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_GPS_SET_GLOBAL_ORIGIN:
-		result = unpack_msg_gps_set_global_origin(env, message);	
+	case MAVLINK_MSG_ID_MISSION_ITEM_REACHED:
+		result = unpack_msg_mission_item_reached(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_GPS_LOCAL_ORIGIN_SET:
-		result = unpack_msg_gps_local_origin_set(env, message);	
+	case MAVLINK_MSG_ID_MISSION_ACK:
+		result = unpack_msg_mission_ack(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_LOCAL_POSITION_SETPOINT_SET:
-		result = unpack_msg_local_position_setpoint_set(env, message);	
+	case MAVLINK_MSG_ID_SET_GPS_GLOBAL_ORIGIN:
+		result = unpack_msg_set_gps_global_origin(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_GPS_GLOBAL_ORIGIN:
+		result = unpack_msg_gps_global_origin(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_SET_LOCAL_POSITION_SETPOINT:
+		result = unpack_msg_set_local_position_setpoint(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_LOCAL_POSITION_SETPOINT:
 		result = unpack_msg_local_position_setpoint(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_CONTROL_STATUS:
-		result = unpack_msg_control_status(env, message);	
+	case MAVLINK_MSG_ID_GLOBAL_POSITION_SETPOINT_INT:
+		result = unpack_msg_global_position_setpoint_int(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_SET_GLOBAL_POSITION_SETPOINT_INT:
+		result = unpack_msg_set_global_position_setpoint_int(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_SAFETY_SET_ALLOWED_AREA:
@@ -202,28 +194,16 @@
 		result = unpack_msg_nav_controller_output(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_POSITION_TARGET:
-		result = unpack_msg_position_target(env, message);	
-		break;
-
 	case MAVLINK_MSG_ID_STATE_CORRECTION:
 		result = unpack_msg_state_correction(env, message);	
-		break;
-
-	case MAVLINK_MSG_ID_SET_ALTITUDE:
-		result = unpack_msg_set_altitude(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_REQUEST_DATA_STREAM:
 		result = unpack_msg_request_data_stream(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_HIL_STATE:
-		result = unpack_msg_hil_state(env, message);	
-		break;
-
-	case MAVLINK_MSG_ID_HIL_CONTROLS:
-		result = unpack_msg_hil_controls(env, message);	
+	case MAVLINK_MSG_ID_DATA_STREAM:
+		result = unpack_msg_data_stream(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_MANUAL_CONTROL:
@@ -234,28 +214,52 @@
 		result = unpack_msg_rc_channels_override(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_GLOBAL_POSITION_INT:
-		result = unpack_msg_global_position_int(env, message);	
-		break;
-
 	case MAVLINK_MSG_ID_VFR_HUD:
 		result = unpack_msg_vfr_hud(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_COMMAND:
-		result = unpack_msg_command(env, message);	
+	case MAVLINK_MSG_ID_COMMAND_LONG:
+		result = unpack_msg_command_long(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_COMMAND_ACK:
 		result = unpack_msg_command_ack(env, message);	
 		break;
 
+	case MAVLINK_MSG_ID_HIL_STATE:
+		result = unpack_msg_hil_state(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_HIL_CONTROLS:
+		result = unpack_msg_hil_controls(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_HIL_RC_INPUTS_RAW:
+		result = unpack_msg_hil_rc_inputs_raw(env, message);	
+		break;
+
 	case MAVLINK_MSG_ID_OPTICAL_FLOW:
 		result = unpack_msg_optical_flow(env, message);	
 		break;
 
-	case MAVLINK_MSG_ID_OBJECT_DETECTION_EVENT:
-		result = unpack_msg_object_detection_event(env, message);	
+	case MAVLINK_MSG_ID_GLOBAL_VISION_POSITION_ESTIMATE:
+		result = unpack_msg_global_vision_position_estimate(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_VISION_POSITION_ESTIMATE:
+		result = unpack_msg_vision_position_estimate(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_VISION_SPEED_ESTIMATE:
+		result = unpack_msg_vision_speed_estimate(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_VICON_POSITION_ESTIMATE:
+		result = unpack_msg_vicon_position_estimate(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_MEMORY_VECT:
+		result = unpack_msg_memory_vect(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_DEBUG_VECT:
@@ -276,6 +280,10 @@
 
 	case MAVLINK_MSG_ID_DEBUG:
 		result = unpack_msg_debug(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_EXTENDED_MESSAGE:
+		result = unpack_msg_extended_message(env, message);	
 		break;
 
 	case MAVLINK_MSG_ID_SENSOR_OFFSETS:
@@ -312,5 +320,29 @@
 
 	case MAVLINK_MSG_ID_MOUNT_STATUS:
 		result = unpack_msg_mount_status(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_FENCE_POINT:
+		result = unpack_msg_fence_point(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_FENCE_FETCH_POINT:
+		result = unpack_msg_fence_fetch_point(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_FENCE_STATUS:
+		result = unpack_msg_fence_status(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_AHRS:
+		result = unpack_msg_ahrs(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_SIMSTATE:
+		result = unpack_msg_simstate(env, message);	
+		break;
+
+	case MAVLINK_MSG_ID_HWSTATUS:
+		result = unpack_msg_hwstatus(env, message);	
 		break;
 

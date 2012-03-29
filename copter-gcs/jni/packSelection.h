@@ -3,8 +3,8 @@
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_BOOT:
-		pack_msg_boot(env, boot_class, obj, msg); 
+	case MAVLINK_MSG_ID_SYS_STATUS:
+		pack_msg_sys_status(env, sys_status_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -15,11 +15,6 @@
 		break;
 	case MAVLINK_MSG_ID_PING:
 		pack_msg_ping(env, ping_class, obj, msg); 
-
-		parsed=true;
-		break;
-	case MAVLINK_MSG_ID_SYSTEM_TIME_UTC:
-		pack_msg_system_time_utc(env, system_time_utc_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -38,23 +33,8 @@
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_ACTION_ACK:
-		pack_msg_action_ack(env, action_ack_class, obj, msg); 
-
-		parsed=true;
-		break;
-	case MAVLINK_MSG_ID_ACTION:
-		pack_msg_action(env, action_class, obj, msg); 
-
-		parsed=true;
-		break;
 	case MAVLINK_MSG_ID_SET_MODE:
 		pack_msg_set_mode(env, set_mode_class, obj, msg); 
-
-		parsed=true;
-		break;
-	case MAVLINK_MSG_ID_SET_NAV_MODE:
-		pack_msg_set_nav_mode(env, set_nav_mode_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -83,13 +63,13 @@
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_SCALED_IMU:
-		pack_msg_scaled_imu(env, scaled_imu_class, obj, msg); 
+	case MAVLINK_MSG_ID_GPS_STATUS:
+		pack_msg_gps_status(env, gps_status_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_GPS_STATUS:
-		pack_msg_gps_status(env, gps_status_class, obj, msg); 
+	case MAVLINK_MSG_ID_SCALED_IMU:
+		pack_msg_scaled_imu(env, scaled_imu_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -113,28 +93,18 @@
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_LOCAL_POSITION:
-		pack_msg_local_position(env, local_position_class, obj, msg); 
+	case MAVLINK_MSG_ID_ATTITUDE_QUATERNION:
+		pack_msg_attitude_quaternion(env, attitude_quaternion_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_GLOBAL_POSITION:
-		pack_msg_global_position(env, global_position_class, obj, msg); 
+	case MAVLINK_MSG_ID_LOCAL_POSITION_NED:
+		pack_msg_local_position_ned(env, local_position_ned_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_GPS_RAW:
-		pack_msg_gps_raw(env, gps_raw_class, obj, msg); 
-
-		parsed=true;
-		break;
-	case MAVLINK_MSG_ID_SYS_STATUS:
-		pack_msg_sys_status(env, sys_status_class, obj, msg); 
-
-		parsed=true;
-		break;
-	case MAVLINK_MSG_ID_RC_CHANNELS_RAW:
-		pack_msg_rc_channels_raw(env, rc_channels_raw_class, obj, msg); 
+	case MAVLINK_MSG_ID_GLOBAL_POSITION_INT:
+		pack_msg_global_position_int(env, global_position_int_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -143,68 +113,83 @@
 
 		parsed=true;
 		break;
+	case MAVLINK_MSG_ID_RC_CHANNELS_RAW:
+		pack_msg_rc_channels_raw(env, rc_channels_raw_class, obj, msg); 
+
+		parsed=true;
+		break;
 	case MAVLINK_MSG_ID_SERVO_OUTPUT_RAW:
 		pack_msg_servo_output_raw(env, servo_output_raw_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT:
-		pack_msg_waypoint(env, waypoint_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_REQUEST_PARTIAL_LIST:
+		pack_msg_mission_request_partial_list(env, mission_request_partial_list_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT_REQUEST:
-		pack_msg_waypoint_request(env, waypoint_request_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_WRITE_PARTIAL_LIST:
+		pack_msg_mission_write_partial_list(env, mission_write_partial_list_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT_SET_CURRENT:
-		pack_msg_waypoint_set_current(env, waypoint_set_current_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_ITEM:
+		pack_msg_mission_item(env, mission_item_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT_CURRENT:
-		pack_msg_waypoint_current(env, waypoint_current_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_REQUEST:
+		pack_msg_mission_request(env, mission_request_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT_REQUEST_LIST:
-		pack_msg_waypoint_request_list(env, waypoint_request_list_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_SET_CURRENT:
+		pack_msg_mission_set_current(env, mission_set_current_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT_COUNT:
-		pack_msg_waypoint_count(env, waypoint_count_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_CURRENT:
+		pack_msg_mission_current(env, mission_current_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT_CLEAR_ALL:
-		pack_msg_waypoint_clear_all(env, waypoint_clear_all_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_REQUEST_LIST:
+		pack_msg_mission_request_list(env, mission_request_list_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT_REACHED:
-		pack_msg_waypoint_reached(env, waypoint_reached_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_COUNT:
+		pack_msg_mission_count(env, mission_count_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_WAYPOINT_ACK:
-		pack_msg_waypoint_ack(env, waypoint_ack_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_CLEAR_ALL:
+		pack_msg_mission_clear_all(env, mission_clear_all_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_GPS_SET_GLOBAL_ORIGIN:
-		pack_msg_gps_set_global_origin(env, gps_set_global_origin_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_ITEM_REACHED:
+		pack_msg_mission_item_reached(env, mission_item_reached_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_GPS_LOCAL_ORIGIN_SET:
-		pack_msg_gps_local_origin_set(env, gps_local_origin_set_class, obj, msg); 
+	case MAVLINK_MSG_ID_MISSION_ACK:
+		pack_msg_mission_ack(env, mission_ack_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_LOCAL_POSITION_SETPOINT_SET:
-		pack_msg_local_position_setpoint_set(env, local_position_setpoint_set_class, obj, msg); 
+	case MAVLINK_MSG_ID_SET_GPS_GLOBAL_ORIGIN:
+		pack_msg_set_gps_global_origin(env, set_gps_global_origin_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_GPS_GLOBAL_ORIGIN:
+		pack_msg_gps_global_origin(env, gps_global_origin_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_SET_LOCAL_POSITION_SETPOINT:
+		pack_msg_set_local_position_setpoint(env, set_local_position_setpoint_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -213,8 +198,13 @@
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_CONTROL_STATUS:
-		pack_msg_control_status(env, control_status_class, obj, msg); 
+	case MAVLINK_MSG_ID_GLOBAL_POSITION_SETPOINT_INT:
+		pack_msg_global_position_setpoint_int(env, global_position_setpoint_int_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_SET_GLOBAL_POSITION_SETPOINT_INT:
+		pack_msg_set_global_position_setpoint_int(env, set_global_position_setpoint_int_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -253,18 +243,8 @@
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_POSITION_TARGET:
-		pack_msg_position_target(env, position_target_class, obj, msg); 
-
-		parsed=true;
-		break;
 	case MAVLINK_MSG_ID_STATE_CORRECTION:
 		pack_msg_state_correction(env, state_correction_class, obj, msg); 
-
-		parsed=true;
-		break;
-	case MAVLINK_MSG_ID_SET_ALTITUDE:
-		pack_msg_set_altitude(env, set_altitude_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -273,13 +253,8 @@
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_HIL_STATE:
-		pack_msg_hil_state(env, hil_state_class, obj, msg); 
-
-		parsed=true;
-		break;
-	case MAVLINK_MSG_ID_HIL_CONTROLS:
-		pack_msg_hil_controls(env, hil_controls_class, obj, msg); 
+	case MAVLINK_MSG_ID_DATA_STREAM:
+		pack_msg_data_stream(env, data_stream_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -293,18 +268,13 @@
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_GLOBAL_POSITION_INT:
-		pack_msg_global_position_int(env, global_position_int_class, obj, msg); 
-
-		parsed=true;
-		break;
 	case MAVLINK_MSG_ID_VFR_HUD:
 		pack_msg_vfr_hud(env, vfr_hud_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_COMMAND:
-		pack_msg_command(env, command_class, obj, msg); 
+	case MAVLINK_MSG_ID_COMMAND_LONG:
+		pack_msg_command_long(env, command_long_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -313,13 +283,48 @@
 
 		parsed=true;
 		break;
+	case MAVLINK_MSG_ID_HIL_STATE:
+		pack_msg_hil_state(env, hil_state_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_HIL_CONTROLS:
+		pack_msg_hil_controls(env, hil_controls_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_HIL_RC_INPUTS_RAW:
+		pack_msg_hil_rc_inputs_raw(env, hil_rc_inputs_raw_class, obj, msg); 
+
+		parsed=true;
+		break;
 	case MAVLINK_MSG_ID_OPTICAL_FLOW:
 		pack_msg_optical_flow(env, optical_flow_class, obj, msg); 
 
 		parsed=true;
 		break;
-	case MAVLINK_MSG_ID_OBJECT_DETECTION_EVENT:
-		pack_msg_object_detection_event(env, object_detection_event_class, obj, msg); 
+	case MAVLINK_MSG_ID_GLOBAL_VISION_POSITION_ESTIMATE:
+		pack_msg_global_vision_position_estimate(env, global_vision_position_estimate_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_VISION_POSITION_ESTIMATE:
+		pack_msg_vision_position_estimate(env, vision_position_estimate_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_VISION_SPEED_ESTIMATE:
+		pack_msg_vision_speed_estimate(env, vision_speed_estimate_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_VICON_POSITION_ESTIMATE:
+		pack_msg_vicon_position_estimate(env, vicon_position_estimate_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_MEMORY_VECT:
+		pack_msg_memory_vect(env, memory_vect_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -345,6 +350,11 @@
 		break;
 	case MAVLINK_MSG_ID_DEBUG:
 		pack_msg_debug(env, debug_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_EXTENDED_MESSAGE:
+		pack_msg_extended_message(env, extended_message_class, obj, msg); 
 
 		parsed=true;
 		break;
@@ -390,6 +400,36 @@
 		break;
 	case MAVLINK_MSG_ID_MOUNT_STATUS:
 		pack_msg_mount_status(env, mount_status_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_FENCE_POINT:
+		pack_msg_fence_point(env, fence_point_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_FENCE_FETCH_POINT:
+		pack_msg_fence_fetch_point(env, fence_fetch_point_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_FENCE_STATUS:
+		pack_msg_fence_status(env, fence_status_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_AHRS:
+		pack_msg_ahrs(env, ahrs_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_SIMSTATE:
+		pack_msg_simstate(env, simstate_class, obj, msg); 
+
+		parsed=true;
+		break;
+	case MAVLINK_MSG_ID_HWSTATUS:
+		pack_msg_hwstatus(env, hwstatus_class, obj, msg); 
 
 		parsed=true;
 		break;

@@ -10,6 +10,7 @@ public class msg_digicam_control extends IMAVLinkMessage{
 
 	private static final long serialVersionUID = MAVLINK_MSG_ID_DIGICAM_CONTROL;
 
+	public float extra_value; ///< Correspondent value to given extra_param
 	public int target_system; ///< System ID
 	public int target_component; ///< Component ID
 	public int session; ///< 0: stop, 1: start or keep it up //Session control e.g. show/hide lens
@@ -19,6 +20,5 @@ public class msg_digicam_control extends IMAVLinkMessage{
 	public int shot; ///< 0: ignore, 1: shot or start filming
 	public int command_id; ///< Command Identity (incremental loop: 0 to 255)//A command sent multiple times will be executed or pooled just once
 	public int extra_param; ///< Extra parameters enumeration (0 means ignore)
-	public float extra_value; ///< Correspondent value to given extra_param
 
 }

@@ -46,7 +46,7 @@ public class ParameterViewActivity extends Activity {
 	}
 	
 	class paramInfo{
-		int[] valueName;		
+		char[] valueName;		
 		float value;
 		
 	}
@@ -72,7 +72,7 @@ public class ParameterViewActivity extends Activity {
 	    }
 
 	    class clickHandler implements View.OnClickListener{
-	    	public int[] valueName;
+	    	public char[] valueName;
 			EditText value;
 			
 	    	@Override

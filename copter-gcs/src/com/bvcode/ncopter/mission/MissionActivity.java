@@ -135,7 +135,7 @@ public class MissionActivity extends MapActivity{
     			if( getWaypointSize() != 0){
 	    			msg_waypoint_count test = new msg_waypoint_count();
 	    			test.target_system = MAVLink.CURRENT_SYSID;
-					test.target_component = MAVLink.MAV_COMPONENT.MAV_COMP_ID_WAYPOINTPLANNER;
+					test.target_component = MAVLink.MAV_COMPONENT.MAV_COMP_ID_MISSIONPLANNER;//WAYPOINTPLANNER;
 					test.count = getWaypointSize() ;
 	    			ba.sendBytesToComm(  MAVLink.createMessage( test ) );
 
@@ -265,7 +265,7 @@ public class MissionActivity extends MapActivity{
 						
 						msg_waypoint waypoint = getWaypoint(msg.seq);
 						waypoint.target_system = MAVLink.CURRENT_SYSID;
-						waypoint.target_component = MAVLink.MAV_COMPONENT.MAV_COMP_ID_WAYPOINTPLANNER;
+						waypoint.target_component = MAVLink.MAV_COMPONENT.MAV_COMP_ID_MISSIONPLANNER;//WAYPOINTPLANNER;
 						ba.sendBytesToComm(  MAVLink.createMessage( waypoint ) );
 								    		
 						break;
@@ -283,7 +283,7 @@ public class MissionActivity extends MapActivity{
 			    		    // Acknowledge receipt
 							msg_waypoint_ack waypoint = new msg_waypoint_ack();
 							waypoint.target_system = MAVLink.CURRENT_SYSID;
-							waypoint.target_component = MAVLink.MAV_COMPONENT.MAV_COMP_ID_WAYPOINTPLANNER;
+							waypoint.target_component = MAVLink.MAV_COMPONENT.MAV_COMP_ID_MISSIONPLANNER;//WAYPOINTPLANNER;
 							ba.sendBytesToComm(  MAVLink.createMessage( waypoint ) );
 			    		    
 						}

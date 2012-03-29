@@ -150,7 +150,7 @@ public class SetupPIDSActivity extends Activity implements OnClickListener {
 	}
 	
 	void saveParameter(String valueName, float value){
-		int[] name = MAVLink.StringNameToInt(valueName);		
+		char[] name = MAVLink.StringNameToInt(valueName);		
 		msg_param_set set = new msg_param_set();
 		set.target_system = MAVLink.CURRENT_SYSID;
 		set.target_component = 0;
@@ -238,7 +238,7 @@ public class SetupPIDSActivity extends Activity implements OnClickListener {
 		}
 
 			
-		private void receivedMAVLinkValues(String name, float param_value, int[] param_id, boolean isConfirm) {
+		private void receivedMAVLinkValues(String name, float param_value, char[] param_id, boolean isConfirm) {
 		
 			// structure: PageNAME_SUBunit_value 
 			String split[] =name.split("_"); 

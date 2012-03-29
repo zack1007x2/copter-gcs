@@ -14,5 +14,6 @@ public class msg_local_position_setpoint extends IMAVLinkMessage{
 	public float y; ///< y position
 	public float z; ///< z position
 	public float yaw; ///< Desired yaw angle
+	public int coordinate_frame; ///< Coordinate frame - valid values are only MAV_FRAME_LOCAL_NED or MAV_FRAME_LOCAL_ENU
 
 }

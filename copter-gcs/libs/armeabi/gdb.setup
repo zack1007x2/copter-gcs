@@ -1,2 +1,0 @@
-set solib-search-path /home/bart/git/copterGCS/copter-gcs/obj/local/armeabi
-directory /home/bart/android-ndk-r7/platforms/android-8/arch-arm/usr/include /home/bart/git/copterGCS/copter-gcs/jni/mavlink/include /home/bart/android-ndk-r7/sources/cxx-stl/system/include
